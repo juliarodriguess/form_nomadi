@@ -1,0 +1,15 @@
+main {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 60%;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    align-self: flex-start;
+}

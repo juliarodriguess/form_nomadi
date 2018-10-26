@@ -10,13 +10,8 @@
     height: 4em;
 }
 
-input {
-    margin-left: 10px;
-    width: 90%;
-}
-  
-input:focus {
-outline: none;
-border-color: #9351b4;
-box-shadow: 0 0 10px #9351b4;
+select {
+    width: 10em;
+    margin: 10px;
+    text-align: center;
 }
