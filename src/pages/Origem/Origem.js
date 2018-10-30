@@ -61,6 +61,7 @@ class Origem extends React.Component {
                     this.state.showComments &&
                     <Comments/>
                 }
+                <ButtonNext>Próximo</ButtonNext>
             </main>
         )
     }

@@ -3,6 +3,7 @@ import Input from '../../components/Input/Input'
 import Dropdown from '../../components/Dropdown/Dropdown'
 import Complement from '../../components/Complement/Complement'
 import Comments from '../../components/Comments/Comments'
+import ButtonNext from '../../components/ButtonNext/ButtonNext'
 import './Destino.css'
 
 class Destino extends React.Component {
@@ -61,6 +62,7 @@ class Destino extends React.Component {
                     this.state.showComments &&
                     <Comments/>
                 }
+                <ButtonNext>Próximo</ButtonNext>
             </main>
         )
     }
