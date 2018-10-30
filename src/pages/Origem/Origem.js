@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Input from '../../components/Input/Input'
 import Dropdown from '../../components/Dropdown/Dropdown'
 import Complement from '../../components/Complement/Complement'
@@ -6,7 +6,7 @@ import Comments from '../../components/Comments/Comments'
 import ButtonNext from '../../components/ButtonNext/ButtonNext'
 import './Origem.css'
 
-class Origem extends React.Component {
+class Origem extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -58,7 +58,7 @@ class Origem extends React.Component {
                     this.state.showComplement &&
                     <Complement/>
                 }
-                                {
+                {
                     this.state.showComments &&
                     <Comments/>
                 }
