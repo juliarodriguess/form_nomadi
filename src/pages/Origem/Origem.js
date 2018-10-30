@@ -1,24 +1,31 @@
 import React from 'react'
 import Input from '../../components/Input/Input'
 import Dropdown from '../../components/Dropdown/Dropdown'
-import Complemento from '../../components/Complemento/Complemento'
+import Complement from '../../components/Complement/Complement'
+import Comments from '../../components/Comments/Comments'
 import './Origem.css'
 
 class Origem extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: 'Default', 
-            mostrarComplemento: false
+            value: 'default', 
+            showComplement: false,
+            showComments: false
         }
     }
 
     selectChange = (event) => {
-        console.log(event.target)
         if(event.target.value === 'apartamento') {
-            this.setState({mostrarComplemento: true})
-        } else {
-            return ''
+            this.setState({showComplement: true})
+            this.setState({showComments: false})
+        }
+         else if(event.target.value === 'casa') {
+            this.setState({showComments: true})
+            this.setState({showComplement: false})
+        } else  if (event.target.value === 'default'){
+            this.setState({showComments: false})
+            this.setState({showComplement: false})
         }
     }
 
@@ -47,8 +54,12 @@ class Origem extends React.Component {
                 Tipo de imóvel:
                 </Dropdown>
                 {
-                    this.state.mostrarComplemento &&
-                    <Complemento/>
+                    this.state.showComplement &&
+                    <Complement/>
+                }
+                                {
+                    this.state.showComments &&
+                    <Comments/>
                 }
             </main>
         )
