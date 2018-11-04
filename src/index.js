@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import Origem from './pages/Origem/Origem';
-import Destino from './pages/Destino/Destino'
-import PortageDate from './pages/PortageDate/PortageDate'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Pedido from './pages/Pedido/Pedido'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -12,9 +11,8 @@ function App() {
         <div className='app'>
         {/* NavBar*/}
         <Switch>
-            <Route path='/' exact component={Origem} />
-            <Route path='/destino' component={Destino} />
-            <Route path='' component={Origem} />
+            <Route path='/' exact component={Home} />
+            <Route path='/pedido' component={Pedido} />
         </Switch>
         </div>
     )

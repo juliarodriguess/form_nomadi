@@ -1,0 +1,38 @@
+#home {
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./moving-box.jpg");
+    background-size: cover;
+    filter: brightness(0.8);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+#home h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 50px;
+    color: white;
+    /* margin-top: 3em; */
+}
+
+#home h1 span {
+    color: #1aa5ff;
+}
+
+#home section {
+    border: 0;
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    max-width: 500px;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}

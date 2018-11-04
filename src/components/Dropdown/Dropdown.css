@@ -1,17 +1,15 @@
-.form {
+.dropdown {
     font-size: 1em;
-    box-sizing: border-box;
     display: flex;
-    padding: 10%;
     width: 100%;
-    padding: 0.8rem;
     align-items: center;
     justify-content: flex-start;
-    height: 4em;
+    height: 2em;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-select {
-    width: 10em;
-    margin: 10px;
+.dropdown select {
+    width: 100px;
     text-align: center;
 }

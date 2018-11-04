@@ -3,7 +3,7 @@ import './Dropdown.css'
 
 function Dropdown (props) {
     return (
-    <form>
+    <fiedset className="dropdown">
         <label htmlFor={props.htmlFor}>
             {props.children}
         </label>
@@ -13,7 +13,7 @@ function Dropdown (props) {
             <option value={props.value3}>{props.option3}</option>
             <option value={props.value4}>{props.option4}</option>
         </select>
-    </form>
+    </fiedset>
     )
 }
 

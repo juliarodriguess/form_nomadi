@@ -3,12 +3,12 @@ import './Input.css'
 
 function Input(props) {
     return (
-        <form className="form">
+        <fieldset className="input">
         <label htmlFor={props.htmlFor}>
         {props.children}
         </label>
         <input id={props.id} type={props.type} name={props.name} />
-        </form>
+        </fieldset>
     )
 }
 

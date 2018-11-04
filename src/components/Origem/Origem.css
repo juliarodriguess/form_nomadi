@@ -1,0 +1,21 @@
+.origem {
+    background-color: lightgray;
+    height: auto;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.origem h2 {
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+.origem fieldset {
+    margin-bottom: 2em;
+}
+
+.radio-btn-origem {
+    display:flex;
+}

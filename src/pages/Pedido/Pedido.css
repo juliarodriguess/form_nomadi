@@ -1,0 +1,13 @@
+.pedido {
+    margin: auto;
+    margin-top: 20%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pedido h1 {
+    font-weight: bold;
+    color: white;
+}

@@ -1,0 +1,16 @@
+.radio-btn {
+    width: auto;
+    padding: 1em;
+    background-color: #1aa5ff;
+    color: white;
+    border-radius: 20px;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+    font-size: 13px;
+}
+
+.radio-btn input {
+    display: none;
+}
