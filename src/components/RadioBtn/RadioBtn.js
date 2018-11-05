@@ -5,33 +5,23 @@ class RadioBtn extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedOption: '',
-            showComplement: false,
-            showComments: false
+            selectedOption: ''
         }
     }
 
 
     handleOptionChange = (changeEvent) => {
+        this.props.onChange(changeEvent)
         this.setState({
           selectedOption: changeEvent.target.value
         })
       }
 
-    selectedChange() {
-        if (this.props.value === 'apartamento' && this.props.checked) {
-            this.setState({ showComplement: true })
-            this.setState({ showComments: false })
-        } else if (this.props.value === 'casa' && this.props.checked) {
-        this.setState({ showComments: true })
-        this.setState({ showComplement: false })
-    }
- }
-      
+
 
     render() {
         return (
-            <div class="radio-btn">
+            <div className="radio-btn">
                 <input type="radio" 
                 id={this.props.id} 
                 name={this.props.name} 

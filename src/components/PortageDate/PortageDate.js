@@ -43,7 +43,7 @@ class PortageDate extends Component {
                 value4='outro'
                 option4='Outro (definir)'
                 selectChange={this.selectChange}>
-                Tipo de imóvel:
+                Escolha o período:
                 </Dropdown>
                 {
                     this.state.showInput &&

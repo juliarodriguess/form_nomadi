@@ -17,7 +17,16 @@ class Origem extends Component {
         }
     }
     
-
+    selectedChange = (event) => {
+        const currentValue = event.target.value
+        if (currentValue === 'apartamento') {
+            this.setState({ showComplement: true })
+            this.setState({ showComments: false })
+        } else if (currentValue === 'casa') {
+        this.setState({ showComments: true })
+        this.setState({ showComplement: false })
+    }
+ }
     
 
     render() {
@@ -51,13 +60,14 @@ class Origem extends Component {
                         Casa
                     </RadioBtn>
                 </fieldset>
-                    {/* {
-                        // <Complement />
-                    } */}
-                    {/* {
+                    {
+                        this.state.showComplement &&
+                            <Complement />
+                    }
+                    {
                         this.state.showComments &&
                         <Comments />
-                    } */}
+                    }
             </section>
         )
     }
