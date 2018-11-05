@@ -1,9 +1,8 @@
 import React from 'react'
 import Input from '../../components/Input/Input'
-import Dropdown from '../../components/Dropdown/Dropdown'
 import Complement from '../../components/Complement/Complement'
 import Comments from '../../components/Comments/Comments'
-import ButtonNext from '../../components/ButtonNext/ButtonNext'
+import RadioBtn from '../../components/RadioBtn/RadioBtn'
 import './Destino.css'
 
 class Destino extends React.Component {
@@ -32,8 +31,8 @@ class Destino extends React.Component {
 
     render() {
         return (
-            <main>
-                <h1>Destino</h1>
+            <section className="origem">
+                <h2>Destino</h2>
                 <Input 
                 htmlFor='adrStr'
                 id='adrStr'
@@ -41,19 +40,26 @@ class Destino extends React.Component {
                 name='adrStr'>
                 Endereço:
                 </Input>
-                <Dropdown
-                htmlFor='propertyType'
-                id='propertyType'
-                name='propertyType'
-                value1='default'
-                option1='Escolha o tipo do imóvel'
-                value2='apartamento'
-                option2='Apartamento'
-                value3='casa'
-                option3='Casa'
-                selectChange={this.selectChange}>
-                Tipo de imóvel:
-                </Dropdown>
+                <fieldset className="radio-btn-destino">
+                    <RadioBtn
+                        htmlFor='apartamento'
+                        id='apartamento'
+                        name='propertyType'
+                        value='apartamento'
+                        checked=''
+                        onChange={this.selectedChange}>
+                        Apartamento
+                    </RadioBtn>
+                    <RadioBtn
+                        htmlFor='casa'
+                        id='casa'
+                        name='propertyType'
+                        value='casa'
+                        checked=''
+                        onChange={this.selectedChange}>
+                        Casa
+                    </RadioBtn>
+                </fieldset>
                 {
                     this.state.showComplement &&
                     <Complement/>
@@ -62,8 +68,7 @@ class Destino extends React.Component {
                     this.state.showComments &&
                     <Comments/>
                 }
-                <ButtonNext>Próximo</ButtonNext>
-            </main>
+            </section>
         )
     }
 }

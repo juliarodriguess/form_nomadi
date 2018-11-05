@@ -1,7 +1,6 @@
 .radio-btn {
     width: auto;
     padding: 1em;
-    background-color: #1aa5ff;
     color: white;
     border-radius: 20px;
     height: 2em;
@@ -11,6 +10,14 @@
     font-size: 13px;
 }
 
+.radio-btn label {
+    background-color: #1aa5ff;
+}
+
 .radio-btn input {
     display: none;
+}
+
+input:checked + label {
+    background-color: blueviolet;
 }

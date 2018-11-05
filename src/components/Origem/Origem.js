@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Input from '../../components/Input/Input'
-import Dropdown from '../../components/Dropdown/Dropdown'
 import RadioBtn from '../../components/RadioBtn/RadioBtn'
 import Complement from '../../components/Complement/Complement'
 import Comments from '../../components/Comments/Comments'
@@ -12,29 +11,18 @@ class Origem extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: 'default',
+            value: '',
             showComplement: false,
             showComments: false
         }
     }
+    
 
-    selectChange = (event) => {
-        if (event.target.value === 'apartamento') {
-            this.setState({ showComplement: true })
-            this.setState({ showComments: false })
-        }
-        else if (event.target.value === 'casa') {
-            this.setState({ showComments: true })
-            this.setState({ showComplement: false })
-        } else if (event.target.value === 'default') {
-            this.setState({ showComments: false })
-            this.setState({ showComplement: false })
-        }
-    }
+    
 
     render() {
         return (
-            <main className="origem">
+            <section className="origem">
                 <h2>Origem</h2>
                 <Input
                     htmlFor='adrStr'
@@ -43,36 +31,37 @@ class Origem extends Component {
                     name='adrStr'>
                     Endereço:
                 </Input>
-                <fieldset class="radio-btn-origem">
+                <fieldset className="radio-btn-origem">
                     <RadioBtn
                         htmlFor='apartamento'
                         id='apartamento'
                         name='propertyType'
-                        value='apartamento'>
+                        value='apartamento'
+                        checked=''
+                        onChange={this.selectedChange}>
                         Apartamento
                     </RadioBtn>
                     <RadioBtn
                         htmlFor='casa'
                         id='casa'
                         name='propertyType'
-                        value='casa'>
+                        value='casa'
+                        checked=''
+                        onChange={this.selectedChange}>
                         Casa
                     </RadioBtn>
                 </fieldset>
-                {
-                    this.state.showComplement &&
-                    <Complement />
-                }
-                {
-                    this.state.showComments &&
-                    <Comments />
-                }
-                <ButtonNext>Próximo</ButtonNext>
-            </main>
+                    {/* {
+                        // <Complement />
+                    } */}
+                    {/* {
+                        this.state.showComments &&
+                        <Comments />
+                    } */}
+            </section>
         )
     }
 }
 
 
 export default Origem
-

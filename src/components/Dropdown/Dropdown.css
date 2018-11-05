@@ -1,5 +1,5 @@
 .dropdown {
-    font-size: 1em;
+    font-size: 15px;
     display: flex;
     width: 100%;
     align-items: center;
@@ -7,9 +7,11 @@
     height: 2em;
     flex-direction: column;
     align-items: flex-start;
+    margin: 10px 0 10px;
 }
 
 .dropdown select {
-    width: 100px;
+    width: 200px;
     text-align: center;
+    font-size: 10px;
 }

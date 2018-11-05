@@ -1,2 +1,22 @@
+.destino {
+    background-color: lightgray;
+    height: auto;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.destino h2 {
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+.destino fieldset {
+    margin-bottom: 2em;
+}
+
+.radio-btn-destino {
+    display:flex;
+}
 

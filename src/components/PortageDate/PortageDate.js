@@ -24,8 +24,8 @@ class PortageDate extends Component {
 
     render() {
         return (
-            <section>
-                <h1>Data e Hora</h1>
+            <section className="portage-date">
+                <h2>Data e Hora</h2>
                 <label htmlFor='datePicker'>Escolha as possíveis datas da sua mudança:</label>
                 <MultipleDatePicker
                     id='datePicker' onSubmit={dates => console.log('selected date', dates)}
@@ -51,7 +51,6 @@ class PortageDate extends Component {
                     Qual o horário que prefere?
                     </Input>
                 }
-                <ButtonNext>Próximo</ButtonNext>
             </section>
         )
     }

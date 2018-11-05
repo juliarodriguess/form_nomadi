@@ -1,0 +1,14 @@
+.portage-date {
+    background-color: lightgray;
+    height: auto;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.portage-date h2 {
+    margin-bottom: 1em;
+    font-weight: bold;
+}
