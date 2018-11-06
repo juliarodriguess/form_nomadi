@@ -14,7 +14,7 @@ class PortageDate extends Component {
         }
     }
 
-    selectChange = (event) => {
+    selectedChange = (event) => {
         if(event.target.value === 'outro') {
             this.setState({showInput: true})
         } else {
@@ -42,7 +42,7 @@ class PortageDate extends Component {
                 option3='Tarde (de 12h - 18h)'
                 value4='outro'
                 option4='Outro (definir)'
-                selectChange={this.selectChange}>
+                selectedChange={this.selectedChange}>
                 Escolha o período:
                 </Dropdown>
                 {
