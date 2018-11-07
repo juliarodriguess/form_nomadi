@@ -10,12 +10,12 @@ class RadioBtn extends Component {
     }
 
 
-    // handleOptionChange = (changeEvent) => {
-    //     this.props.onChange(changeEvent)
-    //     this.setState({
-    //       selectedOption: changeEvent.target.value
-    //     }) 
-    //   }
+    handleOptionChange = (changeEvent) => {
+        this.props.onChange(changeEvent)
+        this.setState({
+          selectedOption: changeEvent.target.value
+        }) 
+      }
 
 
 

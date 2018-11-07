@@ -2,7 +2,6 @@ import React from 'react'
 import Input from '../../components/Input/Input'
 import Complement from '../../components/Complement/Complement'
 import Comments from '../../components/Comments/Comments'
-import RadioBtn from '../../components/RadioBtn/RadioBtn'
 import './Destino.css'
 
 class Destino extends React.Component {
@@ -16,7 +15,6 @@ class Destino extends React.Component {
     }
 
     selectedChangeDestino = (event) => {
-        console.log(event.target.value)
         const currentValue = event.target.value
         if (currentValue === 'apartamento') {
             this.setState({ showComplement: true })
@@ -62,7 +60,10 @@ class Destino extends React.Component {
                 </fieldset>
                 {
                     this.state.showComplement &&
-                    <Complement/>
+                    <Complement
+                    idNo="noHasLiftDestino"
+                    idYes="yesHasLiftDestino"
+                    name="hasLiftDestino"/>
                 }
                 {
                     this.state.showComments &&

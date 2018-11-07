@@ -9,7 +9,6 @@ class PortageDate extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            value:'default',
             showInput: false
         }
     }
@@ -30,27 +29,42 @@ class PortageDate extends Component {
                 <MultipleDatePicker
                     id='datePicker' onSubmit={dates => console.log('selected date', dates)}
                 />
-                <Dropdown
-                htmlFor='period'
-                id='period'
-                name='period'
-                value1='default'
-                option1='Escolha o período'
-                value2='manha'
-                option2='Manhã (de 09h - 12h)'
-                value3='tarde'
-                option3='Tarde (de 12h - 18h)'
-                value4='outro'
-                option4='Outro (definir)'
-                selectedChange={this.selectedChange}>
-                Escolha o período:
-                </Dropdown>
-                {
-                    this.state.showInput &&
-                    <Input htmlFor='changeTime' id='changeTime' type='time' name='changeTime'>
-                    Qual o horário que prefere?
-                    </Input>
-                }
+                <fieldset className="hourPeriod">
+                    <legend>Escolha o período:</legend>
+                    <input type="radio"
+                        id="manha"
+                        name="period"
+                        value="manha"
+                    />
+                    <label className="hourPeriod"
+                        htmlFor="manha"
+                        children="Manhã (de 09h - 12h)"/>
+
+                    <input type="radio"
+                        id="tarde"
+                        name="period"
+                        value="tarde"
+                    />
+                    <label className="hourPeriod"
+                        htmlFor="tarde"
+                        children="Tarde (de 12h - 18h)"/>
+
+                    <input type="radio"
+                        id="outro"
+                        name="period"
+                        value="outro"
+                        onChange={this.selectedChange}
+                    />
+                    <label className="hourPeriod"
+                        htmlFor="outro"
+                        children="Outro (definir)"/>
+                </fieldset>
+                <fieldset className="otherHourPeriod">
+                    {
+                        this.state.showInput &&
+                        <Input />
+                    }
+                </fieldset>
             </section>
         )
     }

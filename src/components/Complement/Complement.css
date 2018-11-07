@@ -1,3 +1,52 @@
 .complement-property {
     padding-top: 20px;
 }
+
+.apt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#aptNumber {
+    width: 80%;
+}
+
+#stgNumber {
+    width: 80%;
+}
+
+.has-lift {
+    width: auto;
+    color: white;
+    height: 2em;
+    font-size: 13px;
+    display: flex;
+}
+
+.has-lift label {
+    background-color: #1aa5ff;
+    margin-right: 10px;
+    border-radius: 15px;
+    width: auto;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.has-lift input {
+    display: none;
+}
+
+.has-lift legend {
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color:#3a3939;
+    margin-bottom: 5px;
+}
+
+input:checked + label{
+    background-color: darkblue;
+}

@@ -1,8 +1,8 @@
 .portage-date {
-    background-color: lightgray;
+    background-color: #e9e9e9;;
     height: auto;
     padding: 5%;
-    padding-bottom: 5em;
+    padding-bottom: 2em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -12,4 +12,47 @@
 .portage-date h2 {
     margin-bottom: 1em;
     font-weight: bold;
+}
+
+.portage-date fieldset {
+    margin-bottom: 2em;
+}
+
+.hourPeriod {
+    width: auto;
+    color: white;
+    height: 2em;
+    font-size: 13px;
+    display: flex;
+}
+
+.hourPeriod label {
+    background-color: #1aa5ff;
+    margin-right: 10px;
+    border-radius: 15px;
+    width: auto;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hourPeriod input {
+    display: none;
+}
+
+.hourPeriod legend {
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color:#3a3939;
+    margin-bottom: 5px;
+}
+
+input:checked + label{
+    background-color: darkblue;
+}
+
+.otherHourPeriod {
+    padding: 20px 0 0 0;
 }

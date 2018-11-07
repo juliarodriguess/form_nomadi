@@ -1,39 +1,62 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Input from '../Input/Input'
-import Dropdown from '../Dropdown/Dropdown'
 import './Complement.css'
 
-function Complement () {
-    return(
-        <fieldset className="complement-property">
-        <Input 
-        htmlFor='aptNumber'
-        id='aptNumber'
-        type='text'
-        name='aptNumber'>
-        Apartamento:
-        </Input>
-        <Input 
-        htmlFor='stgNumber'
-        id='stgNumber'
-        type='text'
-        name='stgNumber'>
-        Andar:
-        </Input>
-        <Dropdown
-        htmlFor='hasLift'
-        id='hasLift'
-        name='hasLift'
-        value1='default'
-        option1='Escolha a opção'
-        value2='s'
-        option2='Sim'
-        value3='n'
-        option3='Não'>
-        Tem elevador?
-        </Dropdown>
-        </fieldset>
-    )
+class Complement extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            selectedOption: ''
+        }
+    }
+
+    handleOptionChange = (changeEvent) => {
+        this.setState({
+          selectedOption: changeEvent.target.value
+        }) 
+      }
+    
+    render(props) {
+        return(
+            <fieldset className="complement-property">
+                <fieldset className="apt">
+                    <Input 
+                        htmlFor='aptNumber'
+                        id='aptNumber'
+                        type='text'
+                        name='aptNumber'>
+                        Apartamento:
+                    </Input>
+                    <Input 
+                        htmlFor='stgNumber'
+                        id='stgNumber'
+                        type='text'
+                        name='stgNumber'>
+                        Andar:
+                    </Input>
+                </fieldset>
+                <fieldset className="has-lift">
+                    <legend>Tem elevador?</legend>
+                    <input type="radio"
+                        id={this.props.idYes}
+                        name={this.props.name}
+                        value="sim"
+                    />
+                    <label className="has-lift"
+                        htmlFor={this.props.idYes}
+                        children="Sim"/>
+                    <input type="radio"
+                        id={this.props.idNo}
+                        name={this.props.name}
+                        value="nao"
+                    />
+                        <label className="has-lift"
+                        htmlFor={this.props.idNo}
+                        children="Não"/>
+                </fieldset>
+            </fieldset>
+        )
+    }
 }
 
 export default Complement

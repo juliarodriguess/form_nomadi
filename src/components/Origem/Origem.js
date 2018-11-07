@@ -61,7 +61,10 @@ class Origem extends Component {
                 </fieldset>
                 {
                     this.state.showComplement &&
-                    <Complement />
+                    <Complement
+                    idNo="noHasLiftOrigem"
+                    idYes="yesHasLiftOrigem"
+                    name="hasLiftOrigem" />
                 }
                 {
                     this.state.showComments &&
