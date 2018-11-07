@@ -1,9 +1,10 @@
 import React from 'react'
 import Input from '../Input/Input'
+import './Comments.css'
 
 function Comments () {
     return (
-        <section>
+        <fieldset className="comments">
             <Input 
             htmlFor='comments'
             id='comments'
@@ -12,7 +13,7 @@ function Comments () {
             Observações:
             </Input>
             
-        </section>
+        </fieldset>
     )
 }
 

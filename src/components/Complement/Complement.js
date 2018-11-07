@@ -5,7 +5,7 @@ import './Complement.css'
 
 function Complement () {
     return(
-        <section>
+        <fieldset className="complement-property">
         <Input 
         htmlFor='aptNumber'
         id='aptNumber'
@@ -32,7 +32,7 @@ function Complement () {
         option3='Não'>
         Tem elevador?
         </Dropdown>
-        </section>
+        </fieldset>
     )
 }
 

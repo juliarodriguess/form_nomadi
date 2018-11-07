@@ -9,9 +9,15 @@ function Pedido() {
     return (
         <form className="pedido">
         <h1>Descubra o valor do seu frete</h1>
+        <fieldset>
         <Origem/>
+        </fieldset>
+        <fieldset>
         <Destino/>
+        </fieldset>
+        <fieldset>
         <PortageDate/>
+        </fieldset>
         <ButtonNext>Próximo</ButtonNext>
         </form>
     )

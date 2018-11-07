@@ -1,6 +1,6 @@
 #button-next {
     background-color: rgba(76, 209, 160, 1);
-    width: 100%;
+    width: 30%;
     height: 50px;
     color: white;
     text-align: center;
@@ -11,6 +11,7 @@
     text-decoration: none;
     border-radius: 8px;
     margin-top:10px;
+    align-self: flex-end;
 }
 
 #button-next:hover {

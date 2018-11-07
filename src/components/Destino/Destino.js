@@ -9,25 +9,24 @@ class Destino extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: 'default', 
+            value: '', 
             showComplement: false,
             showComments: false
         }
     }
 
-    selectChange = (event) => {
-        if(event.target.value === 'apartamento') {
-            this.setState({showComplement: true})
-            this.setState({showComments: false})
-        }
-         else if(event.target.value === 'casa') {
-            this.setState({showComments: true})
-            this.setState({showComplement: false})
-        } else  if (event.target.value === 'default'){
-            this.setState({showComments: false})
-            this.setState({showComplement: false})
-        }
+    selectedChangeDestino = (event) => {
+        console.log(event.target.value)
+        const currentValue = event.target.value
+        if (currentValue === 'apartamento') {
+            this.setState({ showComplement: true })
+            this.setState({ showComments: false })
+        } else if (currentValue === 'casa') {
+        this.setState({ showComments: true })
+        this.setState({ showComplement: false })
     }
+ }
+    
 
     render() {
         return (
@@ -40,25 +39,26 @@ class Destino extends React.Component {
                 name='adrStr'>
                 Endereço:
                 </Input>
-                <fieldset className="radio-btn-destino">
-                    <RadioBtn
-                        htmlFor='apartamento'
-                        id='apartamento'
-                        name='propertyType'
-                        value='apartamento'
-                        checked=''
-                        onChange={this.selectedChange}>
-                        Apartamento
-                    </RadioBtn>
-                    <RadioBtn
-                        htmlFor='casa'
-                        id='casa'
-                        name='propertyType'
-                        value='casa'
-                        checked=''
-                        onChange={this.selectedChange}>
-                        Casa
-                    </RadioBtn>
+                <fieldset className="property-options">
+                    <legend>Tipo de imóvel:</legend>
+                    <input type="radio"
+                        id="apDestino"
+                        name="tipo-destino"
+                        value="apartamento"
+                        onChange={this.selectedChangeDestino}
+                    />
+                    <label class="radio-btn" 
+                    htmlFor="apDestino"
+                    children="Apartamento"/>
+
+                    <input type="radio"
+                        id="casaDestino"
+                        name="tipo-destino"
+                        value="casa"
+                        onChange={this.selectedChangeDestino}
+                    />
+                    <label class="radio-btn" htmlFor="casaDestino"
+                    children="Casa"/ >
                 </fieldset>
                 {
                     this.state.showComplement &&

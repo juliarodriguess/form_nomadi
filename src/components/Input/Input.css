@@ -10,6 +10,10 @@
 .input input {
     width: 100%;
 }
+
+.input label {
+    color: #3a3939;
+}
   
 /* .input input:focus {
 outline: none;

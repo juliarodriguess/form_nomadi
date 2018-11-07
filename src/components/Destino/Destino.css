@@ -2,6 +2,7 @@
     background-color: lightgray;
     height: auto;
     padding: 5%;
+    padding-bottom: 5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -10,13 +11,46 @@
 .destino h2 {
     margin-bottom: 1em;
     font-weight: bold;
+    color: #3a3939;
 }
 
 .destino fieldset {
     margin-bottom: 2em;
 }
 
-.radio-btn-destino {
-    display:flex;
+.property-options {
+    width: auto;
+    color: white;
+    height: 2em;
+    font-size: 13px;
+    display: flex;
 }
 
+
+.property-options label {
+    background-color: #1aa5ff;
+    margin-right: 10px;
+    border-radius: 15px;
+    padding: 1em;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.property-options input {
+    display: none;
+}
+
+.property-options legend {
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color:#3a3939;
+    margin-bottom: 5px;
+}
+
+input:checked + label {
+    background-color: blueviolet;
+}
