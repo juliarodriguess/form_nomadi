@@ -2,7 +2,6 @@ import React from 'react'
 import Input from '../../components/Input/Input'
 import Complement from '../../components/Complement/Complement'
 import Comments from '../../components/Comments/Comments'
-import './Destino.css'
 
 class Destino extends React.Component {
     constructor(props) {

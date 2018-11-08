@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './ButtonNext.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 function ButtonNext(props) {
     return (
-        <a href={props.href} id="button-next">
+        <Link to={props.url} className="btn btn-primary w-75 mw-100 p-2" id="component-button-next">
             {props.children}
-        </a>
+        </Link>
     )
 }
 

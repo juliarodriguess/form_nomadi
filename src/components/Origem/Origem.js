@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Input from '../../components/Input/Input'
 import Complement from '../../components/Complement/Complement'
 import Comments from '../../components/Comments/Comments'
-import './Origem.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
 class Origem extends Component {

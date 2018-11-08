@@ -18,7 +18,10 @@ function Pedido() {
         <fieldset>
         <PortageDate/>
         </fieldset>
-        <ButtonNext>Próximo</ButtonNext>
+        <div className="btn">
+
+        <ButtonNext url='/'>Próximo</ButtonNext>
+        </div>
         </form>
     )
 }

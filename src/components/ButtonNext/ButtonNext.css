@@ -1,19 +1,13 @@
-#button-next {
-    background-color: rgba(76, 209, 160, 1);
-    width: 30%;
-    height: 50px;
-    color: white;
-    text-align: center;
+#component-button-next {
+    background-color: #4cd1a0;
+    color: #fff;
     font-size: 20px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    text-decoration: none;
     border-radius: 8px;
-    margin-top:10px;
-    align-self: flex-end;
+    margin-top: 10px;
+    border: none;
 }
 
-#button-next:hover {
+#component-button-next:hover {
     background-color: #1aa5ff;
 }

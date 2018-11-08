@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import MultipleDatePicker from 'react-multiple-datepicker'
 import Input from '../../components/Input/Input'
-import Dropdown from '../../components/Dropdown/Dropdown'
-import ButtonNext from '../../components/ButtonNext/ButtonNext'
 import './PortageDate.css'
 
 class PortageDate extends Component {

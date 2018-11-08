@@ -21,9 +21,7 @@
 .hourPeriod {
     width: auto;
     color: white;
-    height: 2em;
     font-size: 13px;
-    display: flex;
 }
 
 .hourPeriod label {
@@ -31,10 +29,7 @@
     margin-right: 10px;
     border-radius: 15px;
     width: auto;
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0.5em 1em;
 }
 
 .hourPeriod input {
@@ -55,8 +50,4 @@ input:checked + label{
 
 .otherHourPeriod {
     padding: 20px 0 0 0;
-}
-
-#datePicker {
-    
 }
