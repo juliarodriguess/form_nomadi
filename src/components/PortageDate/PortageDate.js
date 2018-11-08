@@ -43,9 +43,19 @@ class PortageDate extends Component {
                         name="period"
                         value="tarde"
                     />
+
                     <label className="hourPeriod"
                         htmlFor="tarde"
                         children="Tarde (de 12h - 18h)"/>
+
+                    <input type="radio"
+                        id="dia"
+                        name="period"
+                        value="dia"
+                    />
+                    <label className="hourPeriod"
+                        htmlFor="dia"
+                        children="Em horário comercial (de 9h - 18h)"/>    
 
                     <input type="radio"
                         id="outro"
