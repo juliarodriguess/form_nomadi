@@ -36,3 +36,9 @@
     align-items: center;
     padding: 5%;
 }
+
+@media (max-width: 725px) {
+    .home section {
+        width: 100%;
+    }
+}

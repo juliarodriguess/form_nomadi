@@ -1,5 +1,5 @@
 .complement-property {
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
 .apt {
@@ -9,11 +9,11 @@
 }
 
 #aptNumber {
-    width: 80%;
+    width: 50%;
 }
 
 #stgNumber {
-    width: 80%;
+    width: 50%;
 }
 
 .has-lift {

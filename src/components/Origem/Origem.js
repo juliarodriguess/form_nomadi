@@ -1,8 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Input from '../../components/Input/Input'
 import Complement from '../../components/Complement/Complement'
 import Comments from '../../components/Comments/Comments'
 import 'bootstrap/dist/css/bootstrap.css'
+
+let campos = [
+    {
+        id: "ap",
+        name: "tipo-origem",
+        value: "apartamento",
+        children: "Apartamento"
+    },
+    {
+        id: "casa",
+        name: "tipo-origem",
+        value: "casa",
+        children: "Casa"
+    },
+]
+
 
 class Origem extends Component {
     constructor(props) {
@@ -26,6 +42,8 @@ class Origem extends Component {
     }
 
 
+
+
     render() {
         return (
             <section className="origem">
@@ -39,31 +57,28 @@ class Origem extends Component {
                 </Input>
                 <fieldset className="property-options" >
                     <legend>Tipo de imóvel:</legend>
-                    <input type="radio"
-                        id="ap"
-                        name="tipo-origem"
-                        value="apartamento"
-                        onChange={this.selectedChangeOrigem}
-                    />
-                    <label className="property-options"
-                    htmlFor="ap"
-                    children="Apartamento"/>
+                    {campos.map((data) => {
+                        return (
+                            <Fragment>
 
-                    <input type="radio"
-                        id="casa"
-                        name="tipo-origem"
-                        value="casa"
-                        onChange={this.selectedChangeOrigem}
-                    />
-                    <label className="property-options" htmlFor="casa"
-                    children="Casa"/ >
+                                <input type="radio"
+                                    id={data.id}
+                                    name={data.name}
+                                    value={data.value}
+                                    onChange={this.selectedChangeOrigem}
+                                />
+                                <label className="property-options" htmlFor={data.id}
+                                    children={data.children} />
+                            </Fragment>
+                        )
+                    })}
                 </fieldset>
                 {
                     this.state.showComplement &&
                     <Complement
-                    idNo="noHasLiftOrigem"
-                    idYes="yesHasLiftOrigem"
-                    name="hasLiftOrigem" />
+                        idNo="noHasLiftOrigem"
+                        idYes="yesHasLiftOrigem"
+                        name="hasLiftOrigem" />
                 }
                 {
                     this.state.showComments &&

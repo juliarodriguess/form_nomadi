@@ -1,6 +1,5 @@
 import React from 'react'
 import Input from '../Input/Input'
-import './Comments.css'
 
 function Comments () {
     return (

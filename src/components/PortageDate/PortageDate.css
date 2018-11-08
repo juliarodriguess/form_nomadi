@@ -47,7 +47,3 @@
 input:checked + label{
     background-color: darkblue;
 }
-
-.otherHourPeriod {
-    padding: 20px 0 0 0;
-}

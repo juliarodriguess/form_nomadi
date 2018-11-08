@@ -22,8 +22,7 @@
 .origem {
     background-color: #e9e9e9;
     height: auto;
-    padding: 5%;
-    padding-bottom: 5em;
+    padding: 5% 5% 0 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
