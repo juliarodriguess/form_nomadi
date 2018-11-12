@@ -6,7 +6,7 @@ import ButtonNext from '../../components/ButtonNext/ButtonNext';
 function Home () {
     return (
         <main className="home">
-            <h1>nomadi<span>.</span></h1>
+            <h1>Tão simples que nem parece mudança.</h1>
             <section>
                 <ButtonNext url="/pedido">Fazer um pedido</ButtonNext>
                 <ButtonNext url="/pedido">Falar com um consultor</ButtonNext> 

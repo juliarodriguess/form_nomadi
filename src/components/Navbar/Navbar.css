@@ -1,9 +1,19 @@
-#navbar {
-    font-family: 'Comfortaa', cursive;
-    font-size: 50px;
-    color: white;
+.navbar_nomadi {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em;
 }
 
-#navbar span {
+.navbar_nomadi h2 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.navbar_nomadi h2 span {
     color: #1aa5ff;
 }
