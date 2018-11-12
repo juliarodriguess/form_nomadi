@@ -9,22 +9,11 @@
     width: 100vw;
     background-image: url("./moving-box.jpg");
     background-size: cover;
-    filter: brightness(0.8);
+    /* filter: brightness(0.8); */
     border-radius: 0;
     overflow: hidden;
 }
-
-.home h1 {
-    font-size: 50px;
-    color: white;
-    /* margin-top: 3em; */
-}
-
-.home h1 span {
-    color: #1aa5ff;
-}
-
-.home section {
+.buttons-home {
     border: 0;
     height: 30vh;
     width: 50%;
@@ -36,8 +25,32 @@
     padding: 5%;
 }
 
+.title-home {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    width: auto;
+    height: auto;
+}
+
+
 @media (max-width: 725px) {
-    .home section {
+    .home {
+        background-image: none;
+    }
+
+     .buttons-home {
         width: 100%;
+        margin-bottom: 25%;
+    }
+
+    .title-home {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .buttons-home {
+        height: 15vh;
     }
 }
