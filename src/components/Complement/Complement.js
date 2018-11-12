@@ -11,9 +11,11 @@ class Complement extends Component {
     }
 
     handleOptionChange = (changeEvent) => {
-        this.setState({
-          selectedOption: changeEvent.target.value
-        }) 
+        if(changeEvent.target.value === 'nao') {
+            this.setState({ selectedOption: true }) 
+        } else {
+            this.setState({selectedOption: false})
+        }
       }
     
     render(props) {
@@ -27,13 +29,6 @@ class Complement extends Component {
                         name='aptNumber'>
                         Apartamento:
                     </Input>
-                    <Input 
-                        htmlFor='stgNumber'
-                        id='stgNumber'
-                        type='text'
-                        name='stgNumber'>
-                        Andar:
-                    </Input>
                 </fieldset>
                 <fieldset className="has-lift">
                     <legend>Tem elevador?</legend>
@@ -41,7 +36,8 @@ class Complement extends Component {
                         id={this.props.idYes}
                         name={this.props.name}
                         value="sim"
-                    />
+                        onChange={this.handleOptionChange}
+                        />
                     <label className="has-lift"
                         htmlFor={this.props.idYes}
                         children="Sim"/>
@@ -49,11 +45,22 @@ class Complement extends Component {
                         id={this.props.idNo}
                         name={this.props.name}
                         value="nao"
+                        onChange={this.handleOptionChange}
                     />
                         <label className="has-lift"
                         htmlFor={this.props.idNo}
                         children="Não"/>
                 </fieldset>
+                {
+                    this.state.selectedOption &&
+                    <Input 
+                        htmlFor='stgNumber'
+                        id='stgNumber'
+                        type='text'
+                        name='stgNumber'>
+                        Andar:
+                    </Input>
+                }
             </fieldset>
         )
     }

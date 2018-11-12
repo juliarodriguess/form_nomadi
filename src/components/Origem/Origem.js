@@ -19,7 +19,6 @@ let campos = [
     },
 ]
 
-
 class Origem extends Component {
     constructor(props) {
         super(props)
@@ -41,9 +40,6 @@ class Origem extends Component {
         }
     }
 
-
-
-
     render() {
         return (
             <section className="origem">
@@ -60,7 +56,6 @@ class Origem extends Component {
                     {campos.map((data) => {
                         return (
                             <Fragment>
-
                                 <input type="radio"
                                     id={data.id}
                                     name={data.name}

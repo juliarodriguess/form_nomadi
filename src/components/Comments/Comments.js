@@ -7,7 +7,7 @@ function Comments () {
             <Input 
             htmlFor='comments'
             id='comments'
-            type='number'
+            type='text'
             name='comments'>
             Observações:
             </Input>

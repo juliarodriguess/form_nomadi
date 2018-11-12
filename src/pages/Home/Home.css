@@ -25,6 +25,10 @@
     padding: 5%;
 }
 
+.buttons-home:hover {
+    background-color: #1aa5ff;
+}
+
 .title-home {
     text-align: center;
     font-size: 50px;
