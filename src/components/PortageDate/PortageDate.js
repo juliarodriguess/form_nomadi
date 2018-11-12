@@ -7,15 +7,16 @@ class PortageDate extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            showInput: false
+            showInput: false,
         }
     }
 
     selectedChange = (event) => {
         if(event.target.value === 'outro') {
             this.setState({showInput: true})
-        } else {
+        } else if (event.target.value !== 'outro') {
             this.setState({showInput: false})
+
         }
     }
 
@@ -33,6 +34,7 @@ class PortageDate extends Component {
                         id="manha"
                         name="period"
                         value="manha"
+                        onChange={this.selectedChange}
                     />
                     <label className="hourPeriod"
                         htmlFor="manha"
@@ -42,6 +44,7 @@ class PortageDate extends Component {
                         id="tarde"
                         name="period"
                         value="tarde"
+                        onChange={this.selectedChange}
                     />
 
                     <label className="hourPeriod"
@@ -52,6 +55,7 @@ class PortageDate extends Component {
                         id="dia"
                         name="period"
                         value="dia"
+                        onChange={this.selectedChange}
                     />
                     <label className="hourPeriod"
                         htmlFor="dia"

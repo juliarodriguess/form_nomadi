@@ -23,14 +23,14 @@ class Complement extends Component {
                     <Input 
                         htmlFor='aptNumber'
                         id='aptNumber'
-                        type='number'
+                        type='text'
                         name='aptNumber'>
                         Apartamento:
                     </Input>
                     <Input 
                         htmlFor='stgNumber'
                         id='stgNumber'
-                        type='number'
+                        type='text'
                         name='stgNumber'>
                         Andar:
                     </Input>
