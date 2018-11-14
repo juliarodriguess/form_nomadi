@@ -11,11 +11,10 @@
     background-size: cover;
     /* filter: brightness(0.8); */
     border-radius: 0;
-    overflow: hidden;
 }
 .buttons-home {
     border: 0;
-    height: 30vh;
+    height: 40vh;
     width: 50%;
     display: flex;
     justify-content: space-around;
@@ -23,10 +22,6 @@
     flex-direction: column;
     align-items: center;
     padding: 5%;
-}
-
-.buttons-home:hover {
-    background-color: #1aa5ff;
 }
 
 .title-home {
@@ -55,6 +50,6 @@
 
 @media (max-width: 1024px) {
     .buttons-home {
-        height: 15vh;
+        height: 0vh;
     }
 }

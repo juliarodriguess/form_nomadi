@@ -1,6 +1,7 @@
 import React from 'react'
-import './Home.css'
 import ButtonNext from '../../components/ButtonNext/ButtonNext';
+import SampleBtn from '../../components/SampleBtn/SampleBtn';
+import './Home.css'
 
 function Home () {
     return (
@@ -10,7 +11,7 @@ function Home () {
             </section>
             <section className="buttons-home">
                 <ButtonNext url="/pedido">Fazer um pedido</ButtonNext>
-                <ButtonNext url="/pedido">Falar com um consultor</ButtonNext> 
+                <SampleBtn>Falar com um consultor</SampleBtn> 
                 {/* Abrir modal com informações básicas */}
             </section>
         </main>

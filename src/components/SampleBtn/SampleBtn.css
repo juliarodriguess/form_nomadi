@@ -1,0 +1,13 @@
+#component-button-sample {
+    background-color: #4cd1a0;
+    color: #fff;
+    font-size: 20px;
+    justify-content: center;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: none;
+}
+
+#component-button-sample:hover {
+    background-color: #1aa5ff;
+}
