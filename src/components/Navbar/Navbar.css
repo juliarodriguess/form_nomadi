@@ -10,6 +10,7 @@
     width: 100vw;
     background-color:  #048e99;
     list-style: none;
+    z-index:999
 }
 
 .navbar_nomadi h2 {

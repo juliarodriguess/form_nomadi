@@ -9,7 +9,7 @@
     width: 100vw;
     background-image: url("./moving-box.jpg");
     background-size: cover;
-    /* filter: brightness(0.8); */
+    filter: brightness(0.9);
     border-radius: 0;
 }
 .buttons-home {
@@ -17,11 +17,12 @@
     height: 40vh;
     width: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     max-width: 500px;
     flex-direction: column;
     align-items: center;
     padding: 5%;
+    margin-bottom: -5%;
 }
 
 .title-home {
@@ -30,6 +31,7 @@
     color: white;
     width: auto;
     height: auto;
+    margin-top: 6%;
 }
 
 
@@ -45,11 +47,6 @@
 
     .title-home {
         width: 80%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .buttons-home {
-        height: 0vh;
+        margin-top: 20%;
     }
 }
