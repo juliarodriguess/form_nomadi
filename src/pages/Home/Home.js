@@ -10,9 +10,8 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = { 
-            openModal: false, 
-            data: false, 
-            openSampleModal: false 
+            open: false, 
+            data: false
         }
     }
     
@@ -23,14 +22,12 @@ class Home extends Component {
     
     hideModal = (event) => {
         event.preventDefault()
-        this.setState({ open: false })
-        this.setState({ openSampleModal: false })
+        this.setState({ open: !this.state.open })
     }
 
     sendData = (event) => {
         event.preventDefault()
         this.setState({ data: true })
-        this.setState({ openSampleModal: true })
     }
 
     render(){

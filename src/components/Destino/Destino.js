@@ -24,16 +24,17 @@ class Destino extends React.Component {
     }
  }
     
-
     render() {
         return (
             <section className="origem">
                 <h2>Destino</h2>
                 <Input 
-                htmlFor='adrStr'
-                id='adrStr'
+                htmlFor="addressDestiny"
+                id="addressDestiny"
                 type='text'
-                name='adrStr'>
+                name="addressDestiny"
+                value={this.props.addressDestiny}
+                onChange={this.props.onChange}>
                 Endereço:
                 </Input>
                 <fieldset className="property-options">
@@ -44,7 +45,7 @@ class Destino extends React.Component {
                         value="apartamento"
                         onChange={this.selectedChangeDestino}
                     />
-                    <label class="radio-btn" 
+                    <label className="radio-btn" 
                     htmlFor="apDestino"
                     children="Apartamento"/>
 
@@ -54,7 +55,7 @@ class Destino extends React.Component {
                         value="casa"
                         onChange={this.selectedChangeDestino}
                     />
-                    <label class="radio-btn" htmlFor="casaDestino"
+                    <label className="radio-btn" htmlFor="casaDestino"
                     children="Casa"/ >
                 </fieldset>
                 {

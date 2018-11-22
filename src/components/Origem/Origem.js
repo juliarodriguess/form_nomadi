@@ -8,13 +8,13 @@ let campos = [
     {
         id: "ap",
         name: "tipo-origem",
-        value: "apartamento",
+        propertyType: "apartamento",
         children: "Apartamento"
     },
     {
         id: "casa",
         name: "tipo-origem",
-        value: "casa",
+        propertyType: "casa",
         children: "Casa"
     },
 ]
@@ -23,11 +23,13 @@ class Origem extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: '',
+            propertyType: '',
             showComplement: false,
-            showComments: false
+            showComments: false,
         }
     }
+
+
 
     selectedChangeOrigem = (event) => {
         const currentValue = event.target.value
@@ -45,10 +47,12 @@ class Origem extends Component {
             <section className="origem">
                 <h2>Origem</h2>
                 <Input
-                    htmlFor='adrStr'
-                    id='adrStr'
+                    htmlFor="addressOrigin"
+                    id="addressOrigin"
                     type='text'
-                    name='adrStr'>
+                    name="addressOrigin"
+                    value={this.props.addressOrigin}
+                    onChange={this.props.onChange}>
                     Endereço:
                 </Input>
                 <fieldset className="property-options" >
@@ -59,7 +63,7 @@ class Origem extends Component {
                                 <input type="radio"
                                     id={data.id}
                                     name={data.name}
-                                    value={data.value}
+                                    value={data.propertyType}
                                     onChange={this.selectedChangeOrigem}
                                 />
                                 <label className="property-options" htmlFor={data.id}
