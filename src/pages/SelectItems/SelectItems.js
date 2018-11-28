@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import Search from '../../components/Search/Search'
 import Checkbox from '../../components/Checkbox/Checkbox'
+import { MdAddCircleOutline } from 'react-icons/md'
 import './SelectItems.css'
 
 class SelectItems extends Component {
@@ -9,8 +11,12 @@ class SelectItems extends Component {
 
     render() {
         return (
-            <main className="select-items">
-                <Checkbox/>
+            <main>
+                <section className="select-items">
+                    <Search/>
+                    <Checkbox/>
+                    <MdAddCircleOutline />
+                </section>
             </main>
         )
     }
