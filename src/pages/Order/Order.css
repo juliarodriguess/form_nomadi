@@ -1,4 +1,4 @@
-.pedido {
+.order {
     margin: 90px auto 30px;
     width: 80%;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.pedido h1 {
+.order h1 {
     font-weight: bold;
     color: white;
     text-align: center;
@@ -14,7 +14,7 @@
     font-size: 1.5rem;
 }
 
-.pedido fieldset {
+.order fieldset {
     margin: 10px 0 10px 0;
     padding: auto;    
     /* box-shadow: 5px 5px 5px rgba(0,0,0,0.5); */

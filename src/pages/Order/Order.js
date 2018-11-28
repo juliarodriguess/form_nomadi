@@ -3,13 +3,13 @@ import Origem from '../../components/Origem/Origem'
 import Destino from '../../components/Destino/Destino'
 import PortageDate from '../../components/PortageDate/PortageDate'
 import ButtonNext from '../../components/ButtonNext/ButtonNext'
-import './Pedido.css'
 import SampleBtn from '../../components/SampleBtn/SampleBtn';
 import SampleModal from '../../components/SampleModal/SampleModal';
+import './Order.css'
 
 
 
-class Pedido extends Component {
+class Order extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -93,4 +93,4 @@ class Pedido extends Component {
     }
 }
 
-export default Pedido
+export default Order

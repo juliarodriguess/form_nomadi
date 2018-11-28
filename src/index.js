@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
-import Pedido from './pages/Pedido/Pedido'
+import Order from './pages/Order/Order'
+import SelectItems from './pages/SelectItems/SelectItems'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -14,7 +15,8 @@ class App extends Component {
             <Navbar/>
             <Switch>
                 <Route path='/' exact component={Home} />
-                <Route path='/pedido' component={Pedido} />
+                <Route path='/order' component={Order} />
+                <Route path='/select-items' component={SelectItems} />
             </Switch>
             </React.Fragment>
         )
