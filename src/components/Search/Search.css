@@ -1,0 +1,27 @@
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input {
+    width: 80%;
+    margin: 1em;
+}
+
+.search button {
+    background-color: #4cd1a0;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: none;
+}
+
+.search button:hover {
+    background-color: #1aa5ff;
+}

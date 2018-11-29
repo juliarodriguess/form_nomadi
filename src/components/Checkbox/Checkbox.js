@@ -9,24 +9,25 @@ class Checkbox extends Component {
 
     render() {
         return (
-            <section className="checkbox-selectItens">
+            <div className="checkbox-selectItens">
                 {items.map((item) => {
                     return (  
                         <div>
                             <input
                                 type="checkbox"
                                 name={item.name}
-                                id={item.id}
-                                value={item.name}/>
+                                id={item._id}
+                                value={item.name}
+                                onChange={this.props.onChange}/>
                             <label 
-                                className="checkbox-selectItens"
-                                htmlFor={item.id}>
+                                htmlFor={item._id}>
+                                    <img src={item.icon} alt={item.name}/>
                                     {item.name}
                             </label> 
                         </div>
                     )
                 })}
-            </section>
+            </div>
         )
     }
 }

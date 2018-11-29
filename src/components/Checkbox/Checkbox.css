@@ -1,17 +1,23 @@
 .checkbox-selectItens {
     width: auto;
-    color: white;
+    color: black;
     height: auto;
-    font-size: 13px;
+    font-weight: bold;
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
-
 .checkbox-selectItens label {
-    background-color: #1aa5ff;
+    background-color:white;
     margin-right: 10px;
     border-radius: 15px;
-    width: auto;
+    width: 70px;
     padding: 0.5em 1em;
+    text-align: center;
 }
 
 
@@ -21,12 +27,12 @@
 
 .checkbox-selectItens legend {
     border: none;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: bold;
     color:#3a3939;
     margin-bottom: 5px;
 }
 
 input:checked + label{
-    background-color: darkblue;
+    background-color: #7fccf7;
 }
