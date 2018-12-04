@@ -26,7 +26,7 @@ class Destino extends React.Component {
     
     render() {
         return (
-            <section className="origem">
+            <section className="address">
                 <h2>Destino</h2>
                 <Input 
                 htmlFor="addressDestiny"

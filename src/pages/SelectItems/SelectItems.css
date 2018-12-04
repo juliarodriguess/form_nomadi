@@ -52,3 +52,9 @@
 .choose-items__labels {
     width: 100%;
 }
+
+.select-items__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+}

@@ -60,7 +60,7 @@ class Order extends Component {
     render() {
         console.log(this.state.data)
         return (
-            <form className="pedido">
+            <form className="order">
                 <h1>Descubra o valor do seu frete</h1>
                 <fieldset>
                     <Origem

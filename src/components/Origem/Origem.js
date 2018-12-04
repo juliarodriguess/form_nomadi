@@ -44,7 +44,7 @@ class Origem extends Component {
 
     render() {
         return (
-            <section className="origem">
+            <section className="address">
                 <h2>Origem</h2>
                 <Input
                     htmlFor="addressOrigin"

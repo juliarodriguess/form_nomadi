@@ -56,9 +56,9 @@ class SelectItems extends Component {
     render() {
         return (
             <main className="select-items">
-                    <h1>O que você quer transportar?</h1>
+                    <h1>O que você quer levar?</h1>
                 <section className="search-items">
-                    <Search placeholder="Busque aqui o item que deseja transportar" onChange={this.filterItems} />
+                    <Search placeholder="Procure aqui" onChange={this.filterItems} />
                     {this.state.searchBox && 
                     <p>{this.state.nameOnSearch}</p>}
                 </section>
@@ -83,11 +83,11 @@ class SelectItems extends Component {
                     </div>
                 </section>
                 <section className="list-items">
-                    <h2 id="titleList">Sua lista de itens da mudança</h2>
+                    <h2 id="titleList">Sua checklist da mudança</h2>
                     <p>{this.state.textEmpty && "Você ainda não adicionou nada na sua lista"}</p>
                 </section>
-                <div>
-                    <ButtonNext url="/">Próximo</ButtonNext>
+                <div className="select-items__btn">
+                    <ButtonNext url="/">Tudo certo?</ButtonNext>
                 </div>
             </main>
         )
