@@ -9,8 +9,9 @@ function SampleModal(props) {
                 <button className="button-close" onClick={props.onClickClose}>
                     <MdClose />
                 </button>
-                <h3>{props.h3}</h3>
-                <h5>{props.h5}</h5>
+                <div className="modal-content">
+                    {props.children}
+                </div>
             </div>
         </section>
     )

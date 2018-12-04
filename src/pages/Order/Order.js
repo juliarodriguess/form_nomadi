@@ -3,8 +3,8 @@ import Origem from '../../components/Origem/Origem'
 import Destino from '../../components/Destino/Destino'
 import PortageDate from '../../components/PortageDate/PortageDate'
 import ButtonNext from '../../components/ButtonNext/ButtonNext'
-import SampleBtn from '../../components/SampleBtn/SampleBtn';
-import SampleModal from '../../components/SampleModal/SampleModal';
+import SampleBtn from '../../components/SampleBtn/SampleBtn'
+import SampleModal from '../../components/SampleModal/SampleModal'
 import './Order.css'
 
 
@@ -58,6 +58,7 @@ class Order extends Component {
     }
 
     render() {
+        console.log(this.state.data)
         return (
             <form className="pedido">
                 <h1>Descubra o valor do seu frete</h1>
@@ -83,9 +84,9 @@ class Order extends Component {
                     </SampleBtn>
                     {this.state.open &&
                         <SampleModal
-                            h3="Lorem ipsum"
-                            h5= {`A distância é ${this.state.data}`}
                             onClickClose={this.hideModal}  >
+                            {`A distância é ${this.state.data}`}
+                            <ButtonNext url="/select-items">Ok</ButtonNext>
                         </SampleModal>}
                 </div>
             </form>

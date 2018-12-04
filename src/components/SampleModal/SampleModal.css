@@ -23,15 +23,18 @@
   flex-direction: column;
 }
 
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border: none;
+}
+
 .button-close {
   position: absolute;
   top: 2em;
   right: 2em;
   border: none;
   background-color: transparent;
-}
-
-.button-modal {
-  display: flex;
-  justify-content: center;
 }
