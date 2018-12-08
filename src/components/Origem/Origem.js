@@ -51,7 +51,7 @@ class Origem extends Component {
                     id="addressOrigin"
                     type='text'
                     name="addressOrigin"
-                    value={this.props.addressOrigin}
+                    // value={this.props.addressOrigin}
                     onChange={this.props.onChange}>
                     Endereço:
                 </Input>

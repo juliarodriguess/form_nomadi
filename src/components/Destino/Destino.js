@@ -33,7 +33,7 @@ class Destino extends React.Component {
                 id="addressDestiny"
                 type='text'
                 name="addressDestiny"
-                value={this.props.addressDestiny}
+                // value={this.props.addressDestiny}
                 onChange={this.props.onChange}>
                 Endereço:
                 </Input>

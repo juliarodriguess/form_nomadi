@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
@@ -8,9 +8,8 @@ import SelectItems from './pages/SelectItems/SelectItems'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
-class App extends Component {
-    render() {
-        return (
+function App() {
+    return (
             <React.Fragment>
             <Navbar/>
             <Switch>
@@ -19,13 +18,11 @@ class App extends Component {
                 <Route path='/select-items' component={SelectItems} />
             </Switch>
             </React.Fragment>
-        )
-    }
+    )
 }
-
 
 ReactDOM.render(
     <BrowserRouter>
         <App />
-    </BrowserRouter>, 
+    </BrowserRouter>,
     document.getElementById('app-nomadi'))

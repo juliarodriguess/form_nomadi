@@ -1,7 +1,7 @@
 import React from 'react'
 import './Input.css'
 
-function Input(props) {
+function Input(props) {  
     return (
         <fieldset className="input">
         <label htmlFor={props.htmlFor}>

@@ -12,10 +12,11 @@ import './Order.css'
 class Order extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             addressOrigin: '',
             addressDestiny: '',
-            data: '',
+            data: {},
             open: false
 
         };
@@ -24,14 +25,22 @@ class Order extends Component {
     handleChangeAddressOrigin = (event) => {
         this.setState({ addressOrigin: event.target.value })
     }
-
+    
     handleChangeAddressDestiny = (event) => {
         this.setState({ addressDestiny: event.target.value })
     }
-
+    
+    
     getDistance() {
+        this.setState({
+            data:{
+                origin: this.state.addressOrigin,
+                destiny: this.state.addressDestiny
+            }
+        })
+
         let mapsApi =
-            `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${this.state.addressOrigin}&destinations=${this.state.addressDestiny}&departure_time=now&key=AIzaSyDdgczZxyGrNW9df2fl_D46_1naowL4OJE`
+            `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${this.state.addressOrigin}&destinations=${this.state.addressDestiny}&departure_time=now&key=AIzaSyB6CHNi5g0HT7IvXI8Etr22du8NzkPX3h0`
         fetch(mapsApi)
             .then(response => response.json())
             .then((data) => {
@@ -46,13 +55,13 @@ class Order extends Component {
         }
     }
 
-    showModalPedido = (event) => {
+    showModalOrder = (event) => {
         event.preventDefault()
         this.setState({ open: true })
         this.getDistance()
     }
 
-    hideModalPedido = (event) => {
+    hideModalOrder = (event) => {
         event.preventDefault()
         this.setState({ open: !this.state.open })
     }
@@ -66,7 +75,7 @@ class Order extends Component {
                     <Origem
                         addressOrigin={this.state.addressOrigin}
                         onChange={this.handleChangeAddressOrigin}
-                    />
+                        />
                 </fieldset>
                 <fieldset>
                     <Destino
@@ -79,12 +88,12 @@ class Order extends Component {
                 </fieldset>
                 <div className="btn">
                     <SampleBtn
-                        onClick={this.showModalPedido}>
+                        onClick={this.showModalOrder}>
                             Próximo
                     </SampleBtn>
                     {this.state.open &&
                         <SampleModal
-                            onClickClose={this.hideModal}  >
+                            onClickClose={this.hideModalOrder}  >
                             {`A distância é ${this.state.data}`}
                             <ButtonNext url="/select-items">Ok</ButtonNext>
                         </SampleModal>}
