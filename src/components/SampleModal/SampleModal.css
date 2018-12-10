@@ -38,3 +38,11 @@
   border: none;
   background-color: transparent;
 }
+
+@media (max-width: 725px) {
+  .button-close {
+    top: 2em;
+    border: none;
+    background-color: transparent;
+  }
+}
