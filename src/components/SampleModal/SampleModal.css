@@ -29,6 +29,12 @@
   justify-content: center;
   margin: auto;
   border: none;
+  width: 95%;
+}
+
+.modal-content input {
+  border: solid 0.1px rgba(0, 0, 0, 0.342);
+  border-radius: 0.3rem
 }
 
 .button-close {
@@ -41,8 +47,8 @@
 
 @media (max-width: 725px) {
   .button-close {
-    top: 2em;
-    border: none;
-    background-color: transparent;
+    top: 1.5em;
+    right: 1.5em;
+    z-index: 3000;
   }
 }

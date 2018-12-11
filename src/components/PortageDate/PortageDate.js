@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MultipleDatePicker from 'react-multiple-datepicker'
+import MultipleDatePicker from '../../components/DatePicker/DatePicker'
 import Input from '../../components/Input/Input'
 import './PortageDate.css'
 
@@ -25,9 +25,7 @@ class PortageDate extends Component {
             <section className="portage-date">
                 <h2>Data e Hora</h2>
                 <button className='datePicker'>Escolha as possíveis datas da sua mudança</button>
-                <MultipleDatePicker
-                    id='datePicker' onSubmit={dates => console.log('selected date', dates)}
-                />
+                <MultipleDatePicker/>
                 <fieldset className="hourPeriod">
                     <legend>Escolha o período:</legend>
                     <input type="radio"

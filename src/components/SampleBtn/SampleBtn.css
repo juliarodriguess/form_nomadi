@@ -8,6 +8,13 @@
     border: none;
 }
 
+
 #component-button-sample:hover {
     background-color: #1aa5ff;
+}
+            
+#botao--desabilitado {
+    color: #888888;
+    background: lightgrey;
+    border-color: lightgrey;
 }

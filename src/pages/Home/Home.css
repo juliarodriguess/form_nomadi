@@ -34,19 +34,36 @@
     margin-top: 6%;
 }
 
+.inputs-modal-home {
+    width: 90%;
+}
+
+.send-leads-btn {
+    width: 10em;
+    margin-top: 1em;
+}
+
+.modal-response-content {
+    width: 70%;
+}
+
 
 @media (max-width: 725px) {
     .home {
         background-image: none;
     }
-
-     .buttons-home {
+    
+    .buttons-home {
         width: 100%;
         margin-bottom: 25%;
     }
-
+    
     .title-home {
         width: 80%;
         margin-top: 20%;
+    }
+
+    .inputs-modal-home {
+        width: 100%;
     }
 }
