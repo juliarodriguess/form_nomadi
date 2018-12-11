@@ -24,7 +24,7 @@ class PortageDate extends Component {
         return (
             <section className="portage-date">
                 <h2>Data e Hora</h2>
-                <button className='datePicker'>Escolha as possíveis datas da sua mudança</button>
+                <p className='datePicker'>Escolha as possíveis datas da sua mudança</p>
                 <MultipleDatePicker/>
                 <fieldset className="hourPeriod">
                     <legend>Escolha o período:</legend>

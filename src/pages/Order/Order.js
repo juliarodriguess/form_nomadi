@@ -3,12 +3,8 @@ import distanceService from '../../services/distance'
 import Origem from '../../components/Origem/Origem'
 import Destino from '../../components/Destino/Destino'
 import PortageDate from '../../components/PortageDate/PortageDate'
-import ButtonNext from '../../components/ButtonNext/ButtonNext'
 import SampleBtn from '../../components/SampleBtn/SampleBtn'
-import SampleModal from '../../components/SampleModal/SampleModal'
 import './Order.css'
-
-
 
 class Order extends Component {
     constructor(props) {
@@ -92,12 +88,6 @@ class Order extends Component {
                         onClick={this.showModalOrder}>
                             Próximo
                     </SampleBtn>
-                    {this.state.open &&
-                        <SampleModal
-                            onClickClose={this.hideModalOrder}  >
-                            {`A distância é ${this.state.data}`}
-                            <ButtonNext url="/select-items">Ok</ButtonNext>
-                        </SampleModal>}
                 </div>
             </form>
         )
