@@ -54,15 +54,15 @@ class Checkout extends Component {
                 </section>
                 <section className="select-items-checkout">
                     <img  className="select-items-checkout__img" src="https://image.flaticon.com/icons/svg/1044/1044288.svg"/>
-                    <p><strong>Volume do frete: </strong>20 itens.</p>
+                    <p><strong>Volume do frete: </strong>{this.state.data &&this.state.data.listOfItems.length}</p>
                 </section>
                 <section className="date-checkout">
                     <img  className="date-checkout__img" src="https://image.flaticon.com/icons/svg/942/942759.svg"/>
-                    <p><strong>Datas possíveis: </strong>De 8 a 12 de janeiro de 2019.</p>
+                    <p><strong>Datas possíveis: </strong>de {this.state.data &&this.state.data.date.startDate} a {this.state.data &&this.state.data.date.endDate}</p>
                 </section>
                 <section className="time-checkout">
                     <img  className="time-checkout__img" src="https://image.flaticon.com/icons/svg/1303/1303672.svg"/>
-                    <p><strong>Período preferido: </strong>Pela manhã.</p>
+                    <p><strong>Período preferido: </strong>{this.state.data &&this.state.data.period.hour}</p>
                 </section>
                 <h5 className="checkout-text">E aí, tudo ok?</h5>
                     <SampleBtn className="btn_checkout__btn" onClick={this.showModal}>Sim, pedir!</SampleBtn>
