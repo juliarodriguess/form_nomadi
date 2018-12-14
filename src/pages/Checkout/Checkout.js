@@ -44,12 +44,12 @@ class Checkout extends Component {
                 <section className="address-checkout">
                     <div className="address-checkout__input">
                         <img  className="address-checkout__img" src="https://image.flaticon.com/icons/svg/326/326660.svg"/>
-                        <p><strong>Endereço de retirada:</strong> Rua Nazaré Paulista, 163. Alto de Pinheiros - São Paulo, SP.</p>
+                        <p><strong>Endereço de retirada:</strong> {this.state.data &&this.state.data.origin.address}</p>
                     </div>
                     <div className="address-checkout__input">
                     <img  className="address-checkout__img" src="https://image.flaticon.com/icons/svg/326/326660.svg"/>
                     <p>
-                    <strong>Endereço de entrega:</strong>Alameda Eduardo Prado, 150. Campos Elíseos - São Paulo, SP.</p>
+                    <strong>Endereço de entrega:</strong> {this.state.data &&this.state.data.destination.address}</p>
                     </div>
                 </section>
                 <section className="select-items-checkout">
