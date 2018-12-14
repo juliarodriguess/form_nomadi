@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
+import ListOfItems from '../ListOfItems/ListOfItems';
+import { dataPortage } from '../FormPortage/FormPortage';
+import { items } from '../../data/items'
 import Search from '../../components/Search/Search'
 import Checkbox from '../../components/Checkbox/Checkbox'
 import SampleModal from '../../components/SampleModal/SampleModal'
 import SampleBtn from '../../components/SampleBtn/SampleBtn'
-import ButtonNext from '../../components/ButtonNext/ButtonNext'
-import { items } from '../../data/items'
 import './SelectItems.css'
 
 class SelectItems extends Component {
     constructor(props){
         super(props)
         this.state = {
-            textEmpty: true,
-            openModal: false,
+            nameOnSearch: '',
             searchBox: false,
+            openModal: false,
             items: items,
-            nameOnSearch: ''
+            listEmpty: true,
+            listOfItems: []
         }
         this.titleList = React.createRef()
     }
@@ -27,9 +29,10 @@ class SelectItems extends Component {
             return item.name.toLowerCase().indexOf(input.toLowerCase()) > -1;
         })
         if(filteredItems.length === 0) {
-            this.setState({nameOnSearch: "Resultado não encontrado"})
+            this.setState({searchBox: true, nameOnSearch: "Resultado não encontrado", items: filteredItems})
+        } else {
+            this.setState({searchBox: false, nameOnSearch:'', items: filteredItems})
         }
-        this.setState({searchBox: true, items: filteredItems})
     }
 
     insertInList = () => {
@@ -39,11 +42,14 @@ class SelectItems extends Component {
         const itemList = document.createTextNode(contentNode)
         node.appendChild(itemList)
         titleList.appendChild(node)
-        this.setState({textEmpty: false})
+        this.setState({listEmpty: false})
+        this.state.listOfItems.push(this.state.item)
+        dataPortage.listOfItems = this.state.listOfItems 
         this.hideModal()
     }
 
     showModal = (event) => {
+        event.preventDefault()
         const id = event.target.value;
         const item = items[id-1]
         this.setState({openModal: true, item})
@@ -55,15 +61,15 @@ class SelectItems extends Component {
 
     render() {
         return (
-            <main className="select-items">
-                    <h1>O que você quer levar?</h1>
-                <section className="search-items">
-                    <Search placeholder="Procure aqui" onChange={this.filterItems} />
-                    {this.state.searchBox && 
-                    <p>{this.state.nameOnSearch}</p>}
-                </section>
-                <section className="choose-items">
+            <section className="select-items">
+                    <h2>O que você quer levar?</h2>
+                <fieldset className="search-items">
+                    <Search placeholder="Filtrar" onChange={this.filterItems} />
+                </fieldset>
+                <fieldset className="choose-items">
                     <h3>ou escolha na nossa lista:</h3>
+                        {this.state.searchBox && 
+                        <p>{this.state.nameOnSearch}</p>}
                     <div className="choose-items__labels">
                         <Checkbox
                             items={this.state.items}
@@ -72,7 +78,7 @@ class SelectItems extends Component {
                                 <SampleModal
                                     onClickClose={this.hideModal} >
                                         <p>{this.state.item.name}</p>
-                                        <SampleBtn onClick={this.insertInList}>
+                                        <SampleBtn type="button" onClick={this.insertInList}>
                                             Tudo certo
                                         </SampleBtn>
                                         <SampleBtn onClick={this.hideModal}>
@@ -81,15 +87,13 @@ class SelectItems extends Component {
                                 </SampleModal>
                             }
                     </div>
-                </section>
-                <section className="list-items">
-                    <h2 id="titleList">Sua checklist da mudança</h2>
-                    <p>{this.state.textEmpty && "Você ainda não adicionou nada na sua lista"}</p>
-                </section>
-                <div className="select-items__btn">
-                    <ButtonNext url="/">Tudo certo?</ButtonNext>
-                </div>
-            </main>
+                </fieldset>
+                    <ListOfItems 
+                        listEmpty={this.state.listEmpty} 
+                        listOfItems={this.state.listOfItems}
+                        item={this.state.item}
+                    />
+            </section>
         )
     }
 }

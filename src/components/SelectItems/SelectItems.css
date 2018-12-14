@@ -7,7 +7,7 @@
     justify-content: center;
 } 
 
-.select-items h1 {
+.select-items h2 {
     font-weight: bold;
     color: white;
     text-align: center;
@@ -26,7 +26,7 @@
     justify-content: space-around;
 }
 
-.list-items h2 {
+.list-items h3 {
     font-weight: bold;
     color: #3a3939;
     font-size: 15px;
@@ -43,7 +43,7 @@
     margin: 1em;
 }
 
-.choose-items h3 {
+.choose-items h4 {
     font-weight: bold;
     color: white;
     font-size: 18px;
@@ -57,4 +57,49 @@
     display: flex;
     justify-content: center;
     margin-top: 1.5em;
+}
+
+.count-items {
+    font-size: 8pt;
+    position: relative;
+    left: 33%;
+}
+
+@media (min-width: 725px) {
+    .select-items {
+        display: grid;
+        grid-template-columns: 2fr 3fr 2fr;
+    }
+    
+    .select-items h2 {
+        position: absolute;
+        left: 40%;
+    }
+
+    .search-items {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+
+    .choose-items {
+        position: absolute;
+        right: 60%;
+        top: 30%;
+        left: 10%;
+    }
+
+    .list-items {
+        position: absolute;
+        left: 55%;
+        top: 20%;
+        height: 25em;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+    }
+
+    .count-items {
+        left: 25%;
+    }
 }

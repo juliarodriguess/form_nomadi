@@ -11,6 +11,7 @@ function SampleBtn(props) {
         <button 
             className="btn btn-primary mt-2 w-75 mw-100 p-2" 
             id={id} 
+            type={props.type}
             onClick={props.onClick}
             disabled={props.desabilitado}
         >

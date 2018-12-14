@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import distanceService from '../../services/distance'
+import dtService from '../../services/distance'
+import { dataPortage } from '../../components/FormPortage/FormPortage'
 import Origem from '../../components/Origem/Origem'
 import Destino from '../../components/Destino/Destino'
 import PortageDate from '../../components/PortageDate/PortageDate'
-import SampleBtn from '../../components/SampleBtn/SampleBtn'
+import ButtonNext from '../../components/ButtonNext/ButtonNext'
 import './Order.css'
 
 class Order extends Component {
@@ -21,10 +22,12 @@ class Order extends Component {
 
     handleChangeAddressOrigin = (event) => {
         this.setState({ addressOrigin: event.target.value })
+        dataPortage.origin.address = this.state.addressOrigin
     }
     
     handleChangeAddressDestiny = (event) => {
         this.setState({ addressDestiny: event.target.value })
+        dataPortage.destination.address = this.state.addressDestiny
     }
     
     sendData = () => {
@@ -32,7 +35,7 @@ class Order extends Component {
         //     data:)
         //     ;
         
-        distanceService.getDistance({
+        dtService.getDistance({
                     origin: this.state.addressOrigin,
                     destiny: this.state.addressDestiny
                 })
@@ -66,8 +69,8 @@ class Order extends Component {
 
     render() {
         return (
-            <form className="order">
-                <h1>Descubra o valor do seu frete</h1>
+            <section className="order">
+                <h2>Descubra o valor do seu frete</h2>
                 <fieldset>
                     <Origem
                         addressOrigin={this.state.addressOrigin}
@@ -83,13 +86,7 @@ class Order extends Component {
                 <fieldset>
                     <PortageDate />
                 </fieldset>
-                <div className="btn">
-                    <SampleBtn
-                        onClick={this.showModalOrder}>
-                            Próximo
-                    </SampleBtn>
-                </div>
-            </form>
+        </section>
         )
     }
 }

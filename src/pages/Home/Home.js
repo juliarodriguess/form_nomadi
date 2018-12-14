@@ -69,7 +69,7 @@ class Home extends Component {
                     <h1>Tão simples que nem parece mudança.</h1>
                 </section>
                 <section className="buttons-home">
-                    <ButtonNext url="/order">Fazer um pedido</ButtonNext>
+                    <ButtonNext url="/portage">Fazer um pedido</ButtonNext>
                     <SampleBtn onClick={this.showModal}>Falar com um consultor</SampleBtn>
                 </section>
                     {this.state.openModal &&

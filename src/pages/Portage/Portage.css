@@ -1,0 +1,25 @@
+.change-section__btn {
+    margin:auto;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-form__btn {
+    margin:auto;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 725px) {
+    .send-form__btn {
+        position: absolute;
+        top: 85%;
+        right: 80%;
+        left: 23%;
+        width: 50%;
+    }
+}

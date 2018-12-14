@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import moment from 'moment'
+import {dataPortage} from '../../components/FormPortage/FormPortage'
 import DatePicker from 'react-datepicker'
 import isAfter from 'date-fns/is_after';
 import addMonths from "date-fns/add_months";
@@ -18,21 +18,22 @@ class MultipleDatePicker extends Component {
     handleChange = ({startDate, endDate}) => {
         startDate = startDate || this.state.startDate;
         endDate = endDate || this.state.endDate;
-    
         if (isAfter(startDate, endDate)) {
           endDate = startDate;
         }
-    
         this.setState({ startDate, endDate });
+        dataPortage.date.startDate = this.state.startDate
+        dataPortage.date.endDate = this.state.endDate
     }
 
     handleChangeStart = startDate => this.handleChange({ startDate });
 
     handleChangeEnd = endDate => this.handleChange({ endDate });
+
     
     render() {
         return (
-            <div>
+            <div className="input-dates">
                 <DatePicker 
                     dateFormat="dd/MM/yyyy"
                     selected={this.state.startDate}
@@ -42,9 +43,10 @@ class MultipleDatePicker extends Component {
                     minDate={new Date()}
                     maxDate={addMonths(new Date(), 3)}
                     excludeDates={[new Date()]}
-                    placeholderText="Clique para escolher datas"
+                    placeholderText="A partir de que dia você pode?"
                     />
                 <DatePicker
+                    dateFormat="dd/MM/yyyy"
                     selected={this.state.endDate}
                     selectsEnd
                     startDate={this.state.startDate}
@@ -53,7 +55,7 @@ class MultipleDatePicker extends Component {
                     minDate={new Date()}
                     maxDate={addMonths(new Date(), 3)}
                     excludeDates={[new Date()]}
-                    placeholderText="Clique para escolher datas"
+                    placeholderText="Até que dia rola?"
                 />
             </div>
         )

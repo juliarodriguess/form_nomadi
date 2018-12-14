@@ -1,0 +1,11 @@
+.input-dates {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    height: 6em;
+    justify-content: space-around;
+}
+
+.input-dates input {
+    width: 150%;
+}

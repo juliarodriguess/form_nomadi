@@ -1,14 +1,15 @@
 import React from 'react'
 import Input from '../Input/Input'
 
-function Comments () {
+function Comments (props) {
     return (
         <fieldset className="comments">
             <Input 
             htmlFor='comments'
             id='comments'
             type='text'
-            name='comments'>
+            name='comments'
+            onBlurCapture={props.onBlurCapture}>
             Observações:
             </Input>
             

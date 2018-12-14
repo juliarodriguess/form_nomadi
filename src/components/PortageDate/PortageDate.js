@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {dataPortage} from '../../components/FormPortage/FormPortage'
 import MultipleDatePicker from '../../components/DatePicker/DatePicker'
 import Input from '../../components/Input/Input'
 import './PortageDate.css'
@@ -12,19 +13,26 @@ class PortageDate extends Component {
     }
 
     selectedChange = (event) => {
-        if(event.target.value === 'outro') {
+        let hourPeriod = event.target.value
+        if(hourPeriod === 'outro') {
             this.setState({showInput: true})
-        } else if (event.target.value !== 'outro') {
+        } else if (hourPeriod !== 'outro') {
             this.setState({showInput: false})
 
         }
+        dataPortage.period.hour = hourPeriod
+    }
+
+    getValue = (event) => {
+        let comments = event.target.value
+        dataPortage.period.comments = comments
     }
 
     render() {
         return (
             <section className="portage-date">
-                <h2>Data e Hora</h2>
-                <p className='datePicker'>Escolha as possíveis datas da sua mudança</p>
+                <h3>Data e Hora</h3>
+                <p className='datePicker'>Indique um dia ou intervalo que está disponível para mudança:</p>
                 <MultipleDatePicker/>
                 <fieldset className="hourPeriod">
                     <legend>Escolha o período:</legend>
@@ -72,7 +80,8 @@ class PortageDate extends Component {
                 <fieldset className="otherHourPeriod">
                     {
                         this.state.showInput &&
-                        <Input />
+                        <Input 
+                            onBlurCapture={this.getValue}/>
                     }
                 </fieldset>
             </section>

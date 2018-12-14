@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { dataPortage } from '../../components/FormPortage/FormPortage'
 import Input from '../../components/Input/Input'
 import Complement from '../../components/Complement/Complement'
 import Comments from '../../components/Comments/Comments'
@@ -29,8 +30,6 @@ class Origem extends Component {
         }
     }
 
-
-
     selectedChangeOrigem = (event) => {
         const currentValue = event.target.value
         if (currentValue === 'apartamento') {
@@ -40,19 +39,41 @@ class Origem extends Component {
             this.setState({ showComments: true })
             this.setState({ showComplement: false })
         }
+        dataPortage.origin.propertyType = currentValue
+    }
+
+    getValueApartament = (event) => {
+        let aptNumber = event.target.value
+        dataPortage.origin.apartment = aptNumber  
+    }
+
+    getValueLift = (event) => {
+        let hasLift = event.target.value
+        dataPortage.origin.hasLift = hasLift   
+    }
+
+    getValueStage = (event) => {
+        let stage = event.target.value
+        dataPortage.origin.stage = stage   
+    }
+
+    getValueComments = (event) => {
+        let comments = event.target.value
+        dataPortage.origin.comments = comments  
     }
 
     render() {
         return (
             <section className="address">
-                <h2>Origem</h2>
+                <h3>Origem</h3>
                 <Input
                     htmlFor="addressOrigin"
                     id="addressOrigin"
                     type='text'
                     name="addressOrigin"
-                    // value={this.props.addressOrigin}
-                    onChange={this.props.onChange}>
+                    placeholder="Fala aqui onde vamos retirar"
+                    onChange={this.props.onChange}
+                    >
                     Endereço:
                 </Input>
                 <fieldset className="property-options" >
@@ -76,12 +97,20 @@ class Origem extends Component {
                     this.state.showComplement &&
                     <Complement
                         idNo="noHasLiftOrigem"
+                        htmlForNo="noHasLiftOrigem"
                         idYes="yesHasLiftOrigem"
-                        name="hasLiftOrigem" />
+                        htmlForYes="yesHasLiftOrigem"
+                        name="hasLiftOrigem"
+                        id="aptOrigem"
+                        htmlFor="aptOrigem"
+                        onBlurCapture={this.getValueApartament}
+                        onChange={this.getValueLift}
+                        onBlurCaptureStage={this.getValueStage}/>
                 }
                 {
                     this.state.showComments &&
-                    <Comments />
+                    <Comments 
+                    onBlurCapture={this.getValueComments}/>
                 }
             </section>
         )

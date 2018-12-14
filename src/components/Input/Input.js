@@ -11,8 +11,10 @@ function Input(props) {
             id={props.id} 
             type={props.type} 
             name={props.name} 
-            value={props.value} 
+            value={props.value}
+            placeholder={props.placeholder}
             onChange={props.onChange}
+            onBlurCapture={props.onBlurCapture}
         />
         </fieldset>
     )
