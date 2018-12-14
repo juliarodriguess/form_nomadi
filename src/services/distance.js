@@ -3,7 +3,7 @@ import axios from 'axios'
 function getDistance(data){
     axios({
     method:'post',
-    url:'http://localhost:4000/api/dt',
+    url:'https://immense-dawn-93107.herokuapp.com/api/dt',
     data:{
         origin: data.origin,
         destiny: data.destiny

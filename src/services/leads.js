@@ -3,7 +3,7 @@ import axios from 'axios'
 function createLead(data){
     axios({
     method:'post',
-    url:'http://localhost:4000/api/leads',
+    url:'https://immense-dawn-93107.herokuapp.com/api/leads',
     data: {
         name: data.nome,
         phone: data.telefone
