@@ -44,25 +44,25 @@ class Checkout extends Component {
                 <section className="address-checkout">
                     <div className="address-checkout__input">
                         <img  className="address-checkout__img" src="https://image.flaticon.com/icons/svg/326/326660.svg"/>
-                        <p><strong>Endereço de retirada:</strong> {this.state.data &&this.state.data.origin.address}</p>
+                        <p><strong>Endereço de retirada:</strong> Rua Vitorino Carmilo, 512. Santa Cecília. São Paulo -SP </p>
                     </div>
                     <div className="address-checkout__input">
                     <img  className="address-checkout__img" src="https://image.flaticon.com/icons/svg/326/326660.svg"/>
                     <p>
-                    <strong>Endereço de entrega:</strong> {this.state.data &&this.state.data.destination.address}</p>
+                    <strong>Endereço de entrega:</strong> Alameda Eduardo Prado, 150. Campos Elíseos. São Paulo - SP.</p>
                     </div>
                 </section>
                 <section className="select-items-checkout">
                     <img  className="select-items-checkout__img" src="https://image.flaticon.com/icons/svg/1044/1044288.svg"/>
-                    <p><strong>Volume do frete: </strong>{this.state.data &&this.state.data.listOfItems.length}</p>
+                    <p><strong>Volume do frete: </strong>20 itens.</p>
                 </section>
                 <section className="date-checkout">
                     <img  className="date-checkout__img" src="https://image.flaticon.com/icons/svg/942/942759.svg"/>
-                    <p><strong>Datas possíveis: </strong>de {this.state.data &&this.state.data.date.startDate} a {this.state.data &&this.state.data.date.endDate}</p>
+                    <p><strong>Datas possíveis: </strong>De 8 de janeiro de 2019 a 12 de janeiro de 2019.</p>
                 </section>
                 <section className="time-checkout">
                     <img  className="time-checkout__img" src="https://image.flaticon.com/icons/svg/1303/1303672.svg"/>
-                    <p><strong>Período preferido: </strong>{this.state.data &&this.state.data.period.hour}</p>
+                    <p><strong>Período preferido: </strong>De manhã (de 09h às 12h).</p>
                 </section>
                 <h5 className="checkout-text">E aí, tudo ok?</h5>
                     <SampleBtn className="btn_checkout__btn" onClick={this.showModal}>Sim, pedir!</SampleBtn>

@@ -28,6 +28,7 @@ class Portage extends Component {
         e.preventDefault()
         portageService.portageReturn(dataPortage)
         window.open('/checkout', '_self')
+        console.log('chamou')
     }
 
     render() {
