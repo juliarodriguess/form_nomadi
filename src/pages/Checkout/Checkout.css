@@ -49,7 +49,7 @@
     flex-direction: row;
     align-items: center;
     padding-right: 10%;
-    padding-left: 2.5em;
+    padding-left: 4.5em;
     justify-content: flex-start;
 }
 
@@ -70,7 +70,7 @@
     justify-content: flex-start;
     position: relative;
     margin-top: 2em;
-    padding-left: 3.5em;
+    padding-left: 5.5em;
 }
 
 .date-checkout p {
@@ -90,7 +90,7 @@
     justify-content: flex-start;
     position: relative;
     margin-top: 1em;
-    padding-left: 9%;
+    padding-left: 5em;
 }
 
 .time-checkout p {
