@@ -41,7 +41,9 @@ class Origem extends Component {
         }
         dataPortage.origin.propertyType = currentValue
     }
-
+    getAddress = (event) =>{
+        dataPortage.origin.address = event.target.value
+    }
     getValueApartament = (event) => {
         let aptNumber = event.target.value
         dataPortage.origin.apartment = aptNumber  
@@ -72,7 +74,7 @@ class Origem extends Component {
                     type='text'
                     name="addressOrigin"
                     placeholder="Fala aqui onde vamos retirar"
-                    onChange={this.props.onChange}
+                    onBlurCapture={this.getAddress}
                     >
                     Endereço:
                 </Input>

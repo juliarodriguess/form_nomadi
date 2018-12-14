@@ -26,7 +26,8 @@ class Portage extends Component {
 
     sendData = (e) => {
         e.preventDefault()
-        portageService.newPortage(dataPortage)
+        portageService.portageReturn(dataPortage)
+        window.open('/checkout', '_self')
     }
 
     render() {
@@ -44,7 +45,7 @@ class Portage extends Component {
                 <div className="select-items-component">
                     <SelectItems />
                     <div className="send-form__btn">
-                        <SampleBtn type="submit">Tudo certo?</SampleBtn>
+                        <SampleBtn type="submit" >Tudo certo?</SampleBtn>
                     </div>
                 </div>
                 }

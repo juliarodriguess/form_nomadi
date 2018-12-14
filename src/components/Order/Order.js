@@ -4,7 +4,6 @@ import { dataPortage } from '../../components/FormPortage/FormPortage'
 import Origem from '../../components/Origem/Origem'
 import Destino from '../../components/Destino/Destino'
 import PortageDate from '../../components/PortageDate/PortageDate'
-import ButtonNext from '../../components/ButtonNext/ButtonNext'
 import './Order.css'
 
 class Order extends Component {
@@ -14,7 +13,6 @@ class Order extends Component {
         this.state = {
             addressOrigin: '',
             addressDestiny: '',
-            data: {},
             open: false
 
         };
@@ -31,30 +29,11 @@ class Order extends Component {
     }
     
     sendData = () => {
-        // this.setState({
-        //     data:)
-        //     ;
-        
         dtService.getDistance({
                     origin: this.state.addressOrigin,
                     destiny: this.state.addressDestiny
                 })
     }
-
-        // let mapsApi =
-        //     `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${this.state.addressOrigin}&destinations=${this.state.addressDestiny}&departure_time=now&key=AIzaSyB6CHNi5g0HT7IvXI8Etr22du8NzkPX3h0`
-        // fetch(mapsApi)
-        //     .then(response => response.json())
-        //     .then((data) => {
-        //         this.setState({
-        //             data: data.rows[0].elements[0].distance.text
-        //         });
-        //     })
-        // if(this.state.addressOrigin && this.state.addressDestiny) {
-        //     return this.state.data
-        // } else {
-        //     return 'Deu ruim'
-        // }
 
     showModalOrder = (event) => {
         event.preventDefault()
@@ -74,13 +53,13 @@ class Order extends Component {
                 <fieldset>
                     <Origem
                         addressOrigin={this.state.addressOrigin}
-                        onChange={this.handleChangeAddressOrigin}
+                        onBlurCapture={this.handleChangeAddressOrigin}
                         />
                 </fieldset>
                 <fieldset>
                     <Destino
                         addressDestiny={this.state.addressDestiny}
-                        onChange={this.handleChangeAddressDestiny}
+                        onBlurCapture={this.handleChangeAddressDestiny}
                     />
                 </fieldset>
                 <fieldset>

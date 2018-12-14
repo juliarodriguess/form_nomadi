@@ -24,6 +24,7 @@ class MultipleDatePicker extends Component {
         this.setState({ startDate, endDate });
         dataPortage.date.startDate = this.state.startDate
         dataPortage.date.endDate = this.state.endDate
+        console.log(this.state.startDate, this.state.endDate)
     }
 
     handleChangeStart = startDate => this.handleChange({ startDate });

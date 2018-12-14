@@ -7,9 +7,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
+    align-items: center;
+    position: relative;
     top: 70px;
-    right: 60px;
 }
 
 .checkout h1 {

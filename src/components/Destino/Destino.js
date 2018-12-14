@@ -25,7 +25,9 @@ class Destino extends React.Component {
         }
         dataPortage.destination.propertyType = currentValue
     }
-
+    getAddress = (event) =>{
+        dataPortage.destination.address = event.target.value
+    }
     getValueApartament = (event) => {
         let aptNumber = event.target.value
         dataPortage.destination.apartment = aptNumber  
@@ -56,7 +58,7 @@ class Destino extends React.Component {
                 type='text'
                 name="addressDestiny"
                 placeholder="Aqui vai o lugar onde vamos deixar no final"
-                onChange={this.props.onChange}>
+                onBlurCapture={this.getAddress}>
                 Endereço:
                 </Input>
                 <fieldset className="property-options">

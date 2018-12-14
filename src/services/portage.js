@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-function newPortage(dataPortage){
+
+export let portageReturn = function (dataPortage){
     axios({
     method:'post',
     url:'http://localhost:4000/api/portage',
@@ -33,8 +34,9 @@ function newPortage(dataPortage){
         listOfItems: dataPortage.listOfItems
         }
     })
-    .then(function (response) {
-        console.log(response);
+    .then(function checkoutResponse (response) {
+        return response.data.origin.address
     })
 }
-export default {newPortage}
+
+export default {portageReturn}
