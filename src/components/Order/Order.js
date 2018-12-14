@@ -35,17 +35,6 @@ class Order extends Component {
                 })
     }
 
-    showModalOrder = (event) => {
-        event.preventDefault()
-        this.setState({ open: true })
-        this.sendData()
-    }
-
-    hideModalOrder = (event) => {
-        event.preventDefault()
-        this.setState({ open: !this.state.open })
-    }
-
     render() {
         return (
             <section className="order">
