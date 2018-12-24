@@ -1,7 +1,9 @@
-import React from 'react'
-
-
 export let dataPortage = {
+    contact: {
+        name: null,
+        phone: null,
+        email: null
+    },
     origin: {    
         address: null,
         propertyType: null,

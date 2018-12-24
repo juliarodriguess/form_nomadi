@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
-import Home from './pages/Home/Home'
 import Portage from './pages/Portage/Portage'
 import Checkout from './pages/Checkout/Checkout'
 import './index.css'
@@ -13,8 +12,7 @@ function App() {
             <React.Fragment>
             <Navbar/>
             <Switch>
-                <Route path='/' exact component={Home} />
-                <Route path='/portage' component={Portage} />
+                <Route path='/' exact component={Portage} />
                 <Route path='/checkout' component={Checkout} />
             </Switch>
             </React.Fragment>

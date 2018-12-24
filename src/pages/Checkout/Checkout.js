@@ -11,12 +11,8 @@ class Checkout extends Component {
         super(props)
         this.state = {
             open: false,
-            data:null
+            data:{}
         }
-    }
-
-    loadData = () => {
-        return checkoutServices.getDataPortage()
     }
 
     showModal = (event) => {
@@ -29,22 +25,33 @@ class Checkout extends Component {
         this.setState({ open: !this.state.open })
     }
 
-    componentDidMount = () => {
-        this.loadData().then((response) => {
-            console.log(response.data)
-            this.setState({data: response.data})
-        })
-    }
+    // async dataToLoad () {
+    //     console.log("1ª",this.state.data)
+    //     const dataToLoad = await checkoutServices.getDataPortage().then((response) => {
+    //         return response.data[0]
+    //     })
+    //     console.log(dataToLoad)
+    //     this.setState({data: dataToLoad})
+    //     console.log("2ª",this.state.data.origin.address)
+    // }
 
+    // async componentWillMount() {
+    //     const data = await this.dataToLoad()
+    //     return data
+    // }
+    
 
     render() {
+        console.log("3ª", this.state.data)
         return(
-            <main className="checkout" onLoad={this.loadData()}>
+            <main className="checkout">
                 <h1>Resumo do seu pedido</h1>
                 <section className="address-checkout">
                     <div className="address-checkout__input">
                         <img  className="address-checkout__img" src="https://image.flaticon.com/icons/svg/326/326660.svg"/>
-                        <p><strong>Endereço de retirada:</strong> Rua Vitorino Carmilo, 512. Santa Cecília. São Paulo -SP </p>
+                        {/* <p><strong>Endereço de retirada:</strong> 
+                        {this.state.data.origin.address}
+                        </p> */}
                     </div>
                     <div className="address-checkout__input">
                     <img  className="address-checkout__img" src="https://image.flaticon.com/icons/svg/326/326660.svg"/>

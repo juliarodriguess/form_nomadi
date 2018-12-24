@@ -6,6 +6,11 @@ export let portageReturn = function (dataPortage){
     method:'post',
     url:'https://immense-dawn-93107.herokuapp.com/api/portage',
     data: {
+        contact: {
+            name: dataPortage.contact.name,
+            phone: dataPortage.contact.phone,
+            email: dataPortage.contact.email
+        },
         origin: {    
             address: dataPortage.origin.address,
             propertyType: dataPortage.origin.propertyType,

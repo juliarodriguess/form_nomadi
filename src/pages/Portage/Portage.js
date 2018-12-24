@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { dataPortage } from '../../components/FormPortage/FormPortage';
 import portageService from '../../services/portage'
+import Contact from '../../components/Contact/Contact'
 import Order from '../../components/Order/Order'
 import SelectItems from '../../components/SelectItems/SelectItems'
 import SampleBtn from '../../components/SampleBtn/SampleBtn'
@@ -10,14 +11,26 @@ class Portage extends Component {
     constructor(props){
         super(props)
         this.state = {
-            order: true,
+            contact: true,
+            order: false,
             selectItems: false
         }
     }
 
-    handleChangeFieldset = (e) => {
+    handleChangeFieldsetOrder = (e) => {
         e.preventDefault()
         this.setState({
+            contact: false,
+            order: true,
+            selectItems: false
+        })
+        console.log(dataPortage)
+    }
+
+    handleChangeFieldsetSelectItems = (e) => {
+        e.preventDefault()
+        this.setState({
+            contact: false,
             order: false,
             selectItems: true
         })
@@ -34,11 +47,19 @@ class Portage extends Component {
     render() {
         return (
             <form onSubmit={this.sendData}>
+                {this.state.contact &&
+                <div className="contact-component">
+                    <Contact/>
+                    <div className="change-section__btn">
+                        <SampleBtn onClick={this.handleChangeFieldsetOrder}>Seguir</SampleBtn>
+                    </div>
+                </div>
+                }
                 {this.state.order &&
                 <div className="order-component">
                     <Order/>
                     <div className="change-section__btn">
-                        <SampleBtn onClick={this.handleChangeFieldset}>Seguir</SampleBtn>
+                        <SampleBtn onClick={this.handleChangeFieldsetSelectItems}>Seguir</SampleBtn>
                     </div>
                 </div>
                 }
