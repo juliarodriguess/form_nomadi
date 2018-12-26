@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Redirect } from 'react-router'
 import { dataPortage } from '../../components/FormPortage/FormPortage';
 import portageService from '../../services/portage'
 import Contact from '../../components/Contact/Contact'
@@ -13,7 +14,8 @@ class Portage extends Component {
         this.state = {
             contact: true,
             order: false,
-            selectItems: false
+            selectItems: false,
+            sentData: false
         }
     }
 
@@ -40,39 +42,42 @@ class Portage extends Component {
     sendData = (e) => {
         e.preventDefault()
         portageService.portageReturn(dataPortage)
-        window.open('/checkout', '_self')
-        console.log('chamou')
+        this.setState({sentData: true})
     }
 
     render() {
-        return (
-            <form onSubmit={this.sendData}>
-                {this.state.contact &&
-                <div className="contact-component">
-                    <Contact/>
-                    <div className="change-section__btn">
-                        <SampleBtn onClick={this.handleChangeFieldsetOrder}>Seguir</SampleBtn>
+        if(this.state.sentData == false) {
+            return (
+                <form onSubmit={this.sendData}>
+                    {this.state.contact &&
+                    <div className="contact-component">
+                        <Contact/>
+                        <div className="change-section__btn">
+                            <SampleBtn onClick={this.handleChangeFieldsetOrder}>Seguir</SampleBtn>
+                        </div>
                     </div>
-                </div>
-                }
-                {this.state.order &&
-                <div className="order-component">
-                    <Order/>
-                    <div className="change-section__btn">
-                        <SampleBtn onClick={this.handleChangeFieldsetSelectItems}>Seguir</SampleBtn>
+                    }
+                    {this.state.order &&
+                    <div className="order-component">
+                        <Order/>
+                        <div className="change-section__btn">
+                            <SampleBtn onClick={this.handleChangeFieldsetSelectItems}>Seguir</SampleBtn>
+                        </div>
                     </div>
-                </div>
-                }
-                {this.state.selectItems &&
-                <div className="select-items-component">
-                    <SelectItems />
-                    <div className="send-form__btn">
-                        <SampleBtn type="submit" >Tudo certo?</SampleBtn>
+                    }
+                    {this.state.selectItems &&
+                    <div className="select-items-component">
+                        <SelectItems />
+                        <div className="send-form__btn">
+                            <SampleBtn type="submit" >Tudo certo?</SampleBtn>
+                        </div>
                     </div>
-                </div>
-                }
-            </form>
-        )
+                    }
+                </form>
+            )
+        } else {
+            return <Redirect to='/checkout' />
+        }
     }
 }
 

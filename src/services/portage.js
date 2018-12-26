@@ -39,9 +39,6 @@ export let portageReturn = function (dataPortage){
         listOfItems: dataPortage.listOfItems
         }
     })
-    .then(function checkoutResponse (response) {
-        return response.data.origin.address
-    })
 }
 
 export default {portageReturn}
