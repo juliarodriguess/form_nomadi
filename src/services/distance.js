@@ -10,7 +10,7 @@ function getDistance(data){
         }
     })
     .then(function (response) {
-        console.log(response);
+        return response.data
     });
 }
 

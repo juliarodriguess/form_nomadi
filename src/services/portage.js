@@ -27,10 +27,10 @@ export let portageReturn = function (dataPortage){
             stage: dataPortage.destination.stage,
             comments: dataPortage.destination.comments,
         },
-        distance: ' ',
+        distance: dataPortage.distance,
         date: {
-            start: dataPortage.date.startDate,
-            end: dataPortage.date.endDate
+            start: dataPortage.date.start,
+            end: dataPortage.date.end
         },
         period: {
             hour: dataPortage.period.hour,

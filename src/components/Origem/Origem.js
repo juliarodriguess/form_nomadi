@@ -41,6 +41,7 @@ class Origem extends Component {
         }
         dataPortage.origin.propertyType = currentValue
     }
+    
     getAddress = (event) =>{
         dataPortage.origin.address = event.target.value
     }

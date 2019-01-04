@@ -20,10 +20,10 @@ export let dataPortage = {
         stage: null,
         comments: null,
     },
-    distance: ' ',
+    distance: null,
     date: {
-        startDate: null,
-        endDate: null
+        start: null,
+        end: null
     },
     period: {
         hour: null,

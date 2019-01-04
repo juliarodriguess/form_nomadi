@@ -22,23 +22,30 @@ class MultipleDatePicker extends Component {
           endDate = startDate;
         }
         this.setState({ startDate, endDate });
-        dataPortage.date.startDate = this.state.startDate
-        dataPortage.date.endDate = this.state.endDate
-        console.log(this.state.startDate, this.state.endDate)
     }
-
+    
+    componentDidUpdate() {
+        let startDateValue = document.querySelector("#startDate").value
+        let endDateValue = document.querySelector("#endDate").value
+        dataPortage.date.start = startDateValue
+        dataPortage.date.end = endDateValue
+        console.log("start", dataPortage.date.start, "end", dataPortage.date.end)
+    }
+    
     handleChangeStart = startDate => this.handleChange({ startDate });
-
+    
     handleChangeEnd = endDate => this.handleChange({ endDate });
-
+    
     
     render() {
         return (
             <div className="input-dates">
-                <DatePicker 
+                <DatePicker
+                    id="startDate"
                     dateFormat="dd/MM/yyyy"
                     selected={this.state.startDate}
                     selectsStart
+                    startDate={this.state.startDate}
                     endDate={this.state.endDate}
                     onChange={this.handleChangeStart}
                     minDate={new Date()}
@@ -47,6 +54,7 @@ class MultipleDatePicker extends Component {
                     placeholderText="A partir de que dia você pode?"
                     />
                 <DatePicker
+                    id="endDate"
                     dateFormat="dd/MM/yyyy"
                     selected={this.state.endDate}
                     selectsEnd

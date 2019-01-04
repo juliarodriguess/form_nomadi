@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Redirect } from 'react-router'
+import axios from 'axios'
 import { dataPortage } from '../../components/FormPortage/FormPortage';
 import portageService from '../../services/portage'
 import Contact from '../../components/Contact/Contact'
@@ -15,6 +16,7 @@ class Portage extends Component {
             contact: true,
             order: false,
             selectItems: false,
+            dataDistance: false,
             sentData: false
         }
     }
@@ -28,15 +30,29 @@ class Portage extends Component {
         })
         console.log(dataPortage)
     }
-
+    
     handleChangeFieldsetSelectItems = (e) => {
         e.preventDefault()
         this.setState({
             contact: false,
             order: false,
-            selectItems: true
+            selectItems: true,
         })
-        console.log(dataPortage)
+        dataPortage.distance = this.sendDistance()
+    }
+    
+    async sendDistance () {
+        await axios({
+            method:'post',
+            url:'https://immense-dawn-93107.herokuapp.com/api/dt',
+            data:{
+                origin: dataPortage.origin.address,
+                destiny: dataPortage.destination.address
+            }
+        })
+        .then(function (response) {
+            return dataPortage.distance = response.data
+        });
     }
 
     sendData = (e) => {
@@ -46,7 +62,7 @@ class Portage extends Component {
     }
 
     render() {
-        if(this.state.sentData == false) {
+        if(this.state.sentData === false) {
             return (
                 <form onSubmit={this.sendData}>
                     {this.state.contact &&

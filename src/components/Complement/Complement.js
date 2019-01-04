@@ -6,13 +6,14 @@ class Complement extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedOption: ''
+            selectedOption: null
         }
     }
 
-    handleOptionChange = (changeEvent) => {
-        if(changeEvent.target.value === 'nao') {
+    handleOptionChange = (event) => {
+        if(event.target.value === 'false') {
             this.setState({ selectedOption: true }) 
+            console.log("foi")
         } else {
             this.setState({selectedOption: false})
         }

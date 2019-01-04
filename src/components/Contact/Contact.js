@@ -4,9 +4,6 @@ import Input from '../../components/Input/Input'
 import './Contact.css'
 
 class Contact extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     getName = (event) => {
         dataPortage.contact.name = event.target.value
